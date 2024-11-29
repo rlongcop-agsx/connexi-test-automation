@@ -42,6 +42,10 @@ Clone this repository:
 ``` bash
 git clone https://github.com/rlongcop-agsx/connexi-test-automation.git
 ```
+Activate Virtual Environment:
+```bash
+source kadena-app-env/bin/activate
+```
 Install test requirements:
 ```bash
 pip install -r requirements.txt
