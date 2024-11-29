@@ -2,12 +2,35 @@
 Connexi test automation for web and mobile testing in test environment.
 
 ## 🚀 Getting Started
-Clone this repository:
-``` bash
-git clone https://github.com/rlongcop-agsx/connexi-test-automation.git
-```
+### Prerequisites
 Download python: <a href="https://www.python.org/downloads/">pyhton.org/downloads</a>
 Verify the installation:
 ``` bash
 python --version
 ```
+Verify pip installed:
+``` bash
+pip --version
+```
+Install node: <a href="https://nodejs.org/en">nodejs.org/en</a>
+Verify installation:
+```bash
+node --version
+npm --version
+```
+Install Appium:
+```bash
+npm install -g appium
+```
+Verify installation:
+```bash
+appium --version
+```
+Download Appium Inspector: <a href="https://github.com/appium/appium-inspector/releases">Appium Inspector</a>
+
+### Setting Up the Project
+Clone this repository:
+``` bash
+git clone https://github.com/rlongcop-agsx/connexi-test-automation.git
+```
+Install 
