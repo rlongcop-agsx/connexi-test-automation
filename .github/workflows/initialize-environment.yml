@@ -24,4 +24,4 @@ jobs:
 
     - name: Run Webdriver Manager
       run: |
-        python -c "from webdriver_manager.chrome import ChromeDriverManager; ChromeDriverManager().install()"
+        python -c "from webdriver_manager.microsoft import EdgeDriverManager; EdgeDriverManager().install()"

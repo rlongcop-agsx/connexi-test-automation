@@ -2,9 +2,10 @@ name: Publish Test Report
 
 on:
   workflow_run:
-    workflows: ["Run Tests"] # Triggered by test workflow
+    workflows: ["Run Tests"]
     types:
       - completed
+  workflow_dispatch:  # Allows manual triggering to test
 
 jobs:
   publish:
@@ -17,7 +18,7 @@ jobs:
     - name: Download test results artifact
       uses: actions/download-artifact@v4
       with:
-        name: test-results
+        name: test-reports
         path: ./reports
 
     - name: Publish test results as a GitHub Pages site
