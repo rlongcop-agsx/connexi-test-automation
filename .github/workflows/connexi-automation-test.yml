@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup:
-    runs-on: windows-latest
+  install:
+    runs-on: ubuntu-latest  # Use Ubuntu instead of Windows
 
     steps:
     - name: Checkout repository
@@ -24,15 +24,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install robotframework  # Make sure Robot Framework is installed
+        pip install robotframework  # Ensure Robot Framework is installed
 
-    - name: Run Webdriver Manager
+    - name: Install WebDriver Manager (if necessary)
       run: |
-        python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
+        pip install webdriver-manager  # For automatic web driver management
+        # Install additional dependencies (like Chrome/Firefox drivers) as needed.
 
   run-tests:
-    runs-on: windows-latest
-    needs: setup  # Ensures that the setup job is completed before running tests
+    runs-on: ubuntu-latest  # Ubuntu for test execution as well
+    needs: install  # Ensures the 'install' job is completed before this job runs
 
     steps:
     - name: Checkout repository
@@ -41,6 +42,10 @@ jobs:
     - name: Run Robot Framework tests
       shell: bash
       run: |
+        # Ensure Robot Framework is available and installed
+        robot --version  # Check if Robot Framework is installed correctly
+
+        # Run Robot Framework tests
         robot -d reports \
         -v BASE_URL:${{ secrets.BASE_URL }} \
         -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
