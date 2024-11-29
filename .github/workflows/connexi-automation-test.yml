@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  setup:
     runs-on: windows-latest
 
     steps:
@@ -28,6 +28,14 @@ jobs:
     - name: Run Webdriver Manager
       run: |
         python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
+
+  run-tests:
+    runs-on: windows-latest
+    needs: setup  # Ensures that the setup job is completed before running tests
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
     - name: Run Robot Framework tests
       shell: bash
@@ -55,7 +63,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    needs: test
+    needs: run-tests  # Ensures the test job is completed before publishing results
     if: always()
 
     steps:
