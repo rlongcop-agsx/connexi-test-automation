@@ -1,5 +1,5 @@
 *** Settings ***
-Resource       ../variables/mobileVariables.robot
+Resource       ../variables/mobileLocators.robot
 Library        AppiumLibrary
 Library        SeleniumLibrary
 Library        OperatingSystem

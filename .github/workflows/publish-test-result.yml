@@ -1,0 +1,27 @@
+name: Publish Test Results
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Download test reports artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: test-reports
+        path: ./reports
+
+    - name: Publish test report as a GitHub Pages site
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        personal_token: ${{ secrets.GH_PAGES_TOKEN }}
+        external_repository: ${{ github.repository }}
+        publish_dir: ./reports/
+        publish_branch: gh-pages 
+        commit_message: "Publish Connexi Test Report"

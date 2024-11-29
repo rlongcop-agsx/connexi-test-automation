@@ -1,0 +1,50 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12^'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Robot Framework tests
+      shell: bash
+      run: |
+        robot -d results \
+        -v BASE_URL:${{ secrets.BASE_URL }} \
+        -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
+        -v ANALYTICS_EMAIL:${{ secrets.ANALYTICS_EMAIL }} \
+        -v FORECASTING_EMAIL:${{ secrets.FORECASTING_EMAIL }} \
+        -v INVENTORY_EMAIL:${{ secrets.INVENTORY_EMAIL }} \
+        -v ORDERING_EMAIL:${{ secrets.ORDERING_EMAIL }} \
+        -v PROCUREMENTSP_EMAIL:${{ secrets.PROCUREMENTSP_EMAIL }} \
+        -v PROCUREMENT_EMAIL:${{ secrets.PROCUREMENT_EMAIL }} \
+        -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
+        -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
+        -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
+        testsuites/Kadena_Tests.robot
+
+    - name: Archive test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: results/

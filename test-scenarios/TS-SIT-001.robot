@@ -1,17 +1,15 @@
 *** Settings ***
-Documentation          Login with invalid and valid credentials Prerequisites: N/A
+Documentation          Testsuite for test scenarios under TS-SIT-001
 Resource               ../resources/kadenaApp.robot
-Resource               ../variables/mobileVariables.robot
-Resource               ../variables/webVariables.robot
-Resource               ../variables/kadenaCredentials.robot
+Resource               ../variables/mobileLocators.robot
+Resource               ../variables/webLocators.robot
+Resource               ../variables/publicCredentials.robot
 Test Setup             kadenaApp.Main Web Setup    ${BROWSER}
 
 # Terminal default command: 
 # robot -d reports test-scenarios/[put specific scenario file]
 # Example: robot -d reports test-scenarios/TS-SIT-001.robot
 
-*** Variables ***
-${BROWSER}=        Edge
 # To change browser add the following to the terminal command:
 # -v BROWSER:[chosen browser]
 # Available: Chrome, Edge, Safari, Firefox
@@ -24,8 +22,9 @@ ${BROWSER}=        Edge
 Sample test
     [Documentation]    Sample test case
     [Tags]             Sample
-    GIVEN I go to web login page    ${LOGINPAGE_URL}           ${LOGIN_HEADER}
-    WHEN I enter                    ${VALID_ORDERING_EMAIL}    ${EMAIL}
+    GIVEN I go to web login page    ${BASE_URL}                ${LOGIN_HEADER}
+    WHEN I enter                    ${ORDERING_EMAIL}          ${EMAIL}
     AND I enter                     ${VALID_PASSWORD}          ${PASSWORD}   
-    THEN I should be redirected     Ordering                   ${MODULES_HEADER_BANNER} 
+    WHEN I click                    ${LOGIN_BUTTON}
+    THEN I should be redirected     Ordering                   ${MODULES_HEADER_BANNER}
     

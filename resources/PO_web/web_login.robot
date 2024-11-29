@@ -13,7 +13,7 @@ Verify Page Loaded
 
 Click login
     [Arguments]        ${locator}
-    Click Element      ${locator}     
+    SeleniumLibrary.Click Element      ${locator}     
 
 Enter credential
     [Arguments]        ${credential}     ${locator}
