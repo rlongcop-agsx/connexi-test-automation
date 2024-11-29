@@ -28,7 +28,7 @@ jobs:
     - name: Run Robot Framework tests
       shell: bash
       run: |
-        robot -d results \
+        robot -d reports \
         -v BASE_URL:${{ secrets.BASE_URL }} \
         -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
         -v ANALYTICS_EMAIL:${{ secrets.ANALYTICS_EMAIL }} \
@@ -46,5 +46,5 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: test-results
-        path: results/
+        name: test-reports
+        path: reports/
