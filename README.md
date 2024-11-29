@@ -71,8 +71,8 @@ robot -d reports -v BROWSER:Chrome
 <br>
 
 ### References
-For robot syntax and documentaions:
-<a href="https://robotframework.org/">Robotframework official web page</a>
-<a href="https://robotframework.org/?tab=builtin#resources">Robotframework builtin libraries</a>
-<a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html">SeleniumLibrary</a>
+For robot syntax and documentaions:<br>
+<a href="https://robotframework.org/">Robotframework official web page</a><br>
+<a href="https://robotframework.org/?tab=builtin#resources">Robotframework builtin libraries</a><br>
+<a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html">SeleniumLibrary</a><br>
 <a href="https://serhatbolsu.github.io/robotframework-appiumlibrary/AppiumLibrary.html#library-documentation-top">AppiumLibrary</a>
