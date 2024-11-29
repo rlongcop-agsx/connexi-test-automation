@@ -1,7 +1,10 @@
-name: Publish Test Results
+name: Publish Test Report
 
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Run Tests"] # Triggered by test workflow
+    types:
+      - completed
 
 jobs:
   publish:
@@ -11,17 +14,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Download test reports artifact
+    - name: Download test results artifact
       uses: actions/download-artifact@v4
       with:
-        name: test-reports
+        name: test-results
         path: ./reports
 
-    - name: Publish test report as a GitHub Pages site
+    - name: Publish test results as a GitHub Pages site
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GH_PAGES_TOKEN }}
         external_repository: ${{ github.repository }}
         publish_dir: ./reports/
         publish_branch: gh-pages 
-        commit_message: "Publish Connexi Test Report"
+        commit_message: "Publish Kadena Test Results"
