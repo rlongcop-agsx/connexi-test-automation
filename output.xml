@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-11-29T10:59:06.822165" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-11-29T11:04:35.689765" rpa="false" schemaversion="5">
 <suite id="s1" name="Test-Scenarios" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios">
 <suite id="s1-s1" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
 <test id="s1-s1-t1" name="Sample test" line="22">
 <kw name="Main Web Setup" owner="kadenaApp" type="SETUP">
 <kw name="Main Web Setup" owner="common">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-11-29T10:59:07.103563" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-11-29T10:59:07.103563" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<msg time="2024-11-29T11:04:35.955372" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-11-29T11:04:35.970979" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="FAIL" start="2024-11-29T10:59:07.103563" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-11-29T11:04:35.955372" elapsed="0.015607">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
 <arg>reports/screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="NOT RUN" start="2024-11-29T10:59:07.103563" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-29T11:04:35.970979" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" start="2024-11-29T10:59:07.119190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-29T11:04:35.970979" elapsed="0.000000"/>
 </kw>
 <arg>${browser}</arg>
 <doc>This is the main setup for the connexi</doc>
-<status status="FAIL" start="2024-11-29T10:59:07.103563" elapsed="0.015627">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-11-29T11:04:35.955372" elapsed="0.015607">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <arg>${BROWSER}</arg>
-<status status="FAIL" start="2024-11-29T10:59:07.103563" elapsed="0.015627">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-11-29T11:04:35.955372" elapsed="0.015607">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <doc>Sample test case</doc>
 <tag>Sample</tag>
-<status status="FAIL" start="2024-11-29T10:59:07.103563" elapsed="0.015627">Setup failed:
+<status status="FAIL" start="2024-11-29T11:04:35.955372" elapsed="0.015607">Setup failed:
 Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </test>
 <doc>Testsuite for test scenarios under TS-SIT-001</doc>
-<status status="FAIL" start="2024-11-29T10:59:06.853400" elapsed="0.265790"/>
+<status status="FAIL" start="2024-11-29T11:04:35.705303" elapsed="0.265676"/>
 </suite>
-<status status="FAIL" start="2024-11-29T10:59:06.837778" elapsed="0.281412"/>
+<status status="FAIL" start="2024-11-29T11:04:35.689765" elapsed="0.281214"/>
 </suite>
 <statistics>
 <total>
@@ -53,6 +53,6 @@ Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screensh
 </suite>
 </statistics>
 <errors>
-<msg time="2024-11-29T10:59:07.103563" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-11-29T11:04:35.955372" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
 </errors>
 </robot>
