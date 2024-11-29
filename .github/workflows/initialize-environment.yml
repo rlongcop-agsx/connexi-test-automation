@@ -1,8 +1,8 @@
 name: Initialize Environment
 
 on:
-  workflow_dispatch: # Manual trigger
-  push: # Optional: Trigger when changes are pushed to the repository
+  workflow_dispatch:  # Manual trigger
+  push:  # Optional: Trigger when changes are pushed to the repository
 
 jobs:
   setup:
@@ -24,4 +24,4 @@ jobs:
 
     - name: Run Webdriver Manager
       run: |
-        python -c "from webdriver_manager.microsoft import IEDriverManager; IEDriverManager().install()"
+        python -c "from webdriver_manager.microsoft import EdgeDriverManager; EdgeDriverManager().install()"
