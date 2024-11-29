@@ -50,3 +50,24 @@ Install test requirements:
 ```bash
 pip install -r requirements.txt
 ```
+
+### Run the Robot Test Automation
+By default, you can run:
+```bash
+robot -d reports test-scenarios/
+```
+You can also run the automation with tags:
+```bash
+robot -d reports -i Sample test-scenarios/
+```
+You can also change the browser, by default it is set to Edge browser:
+```bash
+robot -d reports -v BROWSER:Chrome
+```
+
+### References
+For robot syntax and documentaions:
+<a href="https://robotframework.org/">Robotframework official web page</a>
+<a href="https://robotframework.org/?tab=builtin#resources">Robotframework builtin libraries</a>
+<a href="https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html">SeleniumLibrary</a>
+<a href="https://serhatbolsu.github.io/robotframework-appiumlibrary/AppiumLibrary.html#library-documentation-top">AppiumLibrary</a>
