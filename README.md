@@ -36,6 +36,7 @@ Download Appium Inspector:
 ```bash
 https://github.com/appium/appium-inspector/releases
 ```
+<br>
 
 ### Setting Up the Project
 Clone this repository:
@@ -51,6 +52,8 @@ Install test requirements:
 pip install -r requirements.txt
 ```
 
+<br>
+
 ### Run the Robot Test Automation
 By default, you can run:
 ```bash
@@ -64,6 +67,8 @@ You can also change the browser, by default it is set to Edge browser:
 ```bash
 robot -d reports -v BROWSER:Chrome
 ```
+
+<br>
 
 ### References
 For robot syntax and documentaions:
