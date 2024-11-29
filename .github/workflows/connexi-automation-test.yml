@@ -44,14 +44,14 @@ jobs:
         -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
         -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
         -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
-        testsuites
+        test-scenarios
 
     - name: Archive test results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: test-results
-        path: results/
+        name: test-report
+        path: reports/
 
   publish:
     runs-on: ubuntu-latest
