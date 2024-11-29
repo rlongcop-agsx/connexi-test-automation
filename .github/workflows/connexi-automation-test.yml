@@ -2,9 +2,9 @@ name: Robot Framework Tests
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -29,14 +29,18 @@ jobs:
       run: |
         python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
 
-  run_robot_automation_test:
-    needs: [init]
+  test:
     runs-on: windows-latest
+    needs: init  # Ensures the init job is complete before running the tests
+
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: Run Robot Framework tests
       shell: bash
       run: |
-        robot -d results \
+        robot -d reports \
         -v BASE_URL:${{ secrets.BASE_URL }} \
         -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
         -v ANALYTICS_EMAIL:${{ secrets.ANALYTICS_EMAIL }} \
@@ -59,7 +63,7 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
-    needs: [init, run_robot_automation_test]
+    needs: test
     if: always()
 
     steps:
@@ -69,14 +73,14 @@ jobs:
     - name: Download test results artifact
       uses: actions/download-artifact@v4
       with:
-        name: test-results
-        path: ./results
+        name: test-report
+        path: ./reports
 
     - name: Publish test results as a GitHub Pages site
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GH_PAGES_TOKEN }}
         external_repository: ${{ github.repository }}
-        publish_dir: ./results/
-        publish_branch: gh-pages
-        commit_message: "Publish Kadena Test Results"
+        publish_dir: ./reports/
+        publish_branch: gh-pages 
+        commit_message: "Publish Connexi Report"
