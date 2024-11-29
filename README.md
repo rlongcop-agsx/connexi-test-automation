@@ -36,10 +36,13 @@ Download Appium Inspector:
 ```bash
 https://github.com/appium/appium-inspector/releases
 ```
-<br>
+
 ### Setting Up the Project
 Clone this repository:
 ``` bash
 git clone https://github.com/rlongcop-agsx/connexi-test-automation.git
 ```
-Install 
+Install test requirements:
+```bash
+pip install -r requirements.txt
+```
