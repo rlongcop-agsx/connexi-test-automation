@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation          Testsuite for test scenarios under TS-SIT-001
+Documentation          Login with invalid and valid credentials
 Resource               ../resources/kadenaApp.robot
 Resource               ../variables/mobileLocators.robot
 Resource               ../variables/webLocators.robot
