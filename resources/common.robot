@@ -8,8 +8,8 @@ Library        OperatingSystem
 *** Keywords ***
 Main Mobile Setup
     [Documentation]        This is the main setup for the kadena mobile app
-    Empty Directory                 reports/screenshots
-    Set Screenshot Directory        reports/screenshots
+    Empty Directory                 ../reports/screenshots
+    Set Screenshot Directory        ../reports/screenshots
 
     Open Application    ${APPIUM_URL}
     ...    platformName=${PLATFORM_NAME}

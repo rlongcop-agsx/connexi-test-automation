@@ -5,6 +5,7 @@ Resource               ../variables/mobileLocators.robot
 Resource               ../variables/webLocators.robot
 Resource               ../variables/publicCredentials.robot
 Test Setup             kadenaApp.Main Web Setup    ${BROWSER}
+Test Teardown          kadenaApp.Main Web Teardown
 
 # Terminal default command: 
 # robot -d reports test-scenarios/[put specific scenario file]
