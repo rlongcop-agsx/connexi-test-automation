@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-11-29T11:14:37.059436" rpa="false" schemaversion="5">
-<suite id="s1" name="Test-Scenarios" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios">
-<suite id="s1-s1" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2024-11-29T19:12:39.282845" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Scenarios" source="/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/test-scenarios">
+<suite id="s1-s1" name="TS-SIT-001" source="/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/test-scenarios/TS-SIT-001.robot">
 <test id="s1-s1-t1" name="Sample test" line="23">
 <kw name="Main Web Setup" owner="kadenaApp" type="SETUP">
 <kw name="Main Web Setup" owner="common">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-11-29T11:14:37.325177" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-11-29T11:14:37.325177" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-11-29T19:12:39.424438" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-11-29T19:12:39.424956" level="INFO" html="true">Emptied directory '&lt;a href="file:///Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots"&gt;/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/reports/screenshots&lt;/a&gt;'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-11-29T11:14:37.325177" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-29T19:12:39.424359" elapsed="0.000625"/>
 </kw>
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
 <arg>reports/screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-11-29T11:14:37.325177" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-29T19:12:39.425059" elapsed="0.000090"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-11-29T11:14:37.325177" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<msg time="2024-11-29T19:12:39.425301" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-11-29T11:14:37.325177" elapsed="46.379196"/>
+<status status="PASS" start="2024-11-29T19:12:39.425224" elapsed="1.791609"/>
 </kw>
 <arg>${browser}</arg>
 <doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-11-29T11:14:37.325177" elapsed="46.379196"/>
+<status status="PASS" start="2024-11-29T19:12:39.423898" elapsed="1.793138"/>
 </kw>
 <arg>${BROWSER}</arg>
-<status status="PASS" start="2024-11-29T11:14:37.325177" elapsed="46.379196"/>
+<status status="PASS" start="2024-11-29T19:12:39.423714" elapsed="1.793368"/>
 </kw>
 <kw name="GIVEN I go to web login page" owner="kadenaApp">
 <kw name="Navigate to login page" owner="web_login">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-11-29T11:15:23.705381" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<msg time="2024-11-29T19:12:41.218098" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-11-29T11:15:23.705381" elapsed="2.626563"/>
+<status status="PASS" start="2024-11-29T19:12:41.218029" elapsed="0.660857"/>
 </kw>
 <arg>${url}</arg>
-<status status="PASS" start="2024-11-29T11:15:23.705381" elapsed="2.626563"/>
+<status status="PASS" start="2024-11-29T19:12:41.217879" elapsed="0.661112"/>
 </kw>
 <kw name="Verify Page Loaded" owner="web_login">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-11-29T11:15:26.331944" elapsed="0.218837"/>
+<status status="PASS" start="2024-11-29T19:12:41.879336" elapsed="0.025869"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.331944" elapsed="0.218837"/>
+<status status="PASS" start="2024-11-29T19:12:41.879121" elapsed="0.026153"/>
 </kw>
 <arg>${BASE_URL}</arg>
 <arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-11-29T11:15:23.705381" elapsed="2.845400"/>
+<status status="PASS" start="2024-11-29T19:12:41.217564" elapsed="0.687741"/>
 </kw>
 <kw name="WHEN I enter" owner="kadenaApp">
 <kw name="Enter credential" owner="web_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-29T11:15:26.551777" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
+<msg time="2024-11-29T19:12:41.906018" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
 <arg>${locator}</arg>
 <arg>${credential}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-29T11:15:26.551777" elapsed="0.215154"/>
+<status status="PASS" start="2024-11-29T19:12:41.905768" elapsed="0.119527"/>
 </kw>
 <arg>${credentials}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.550781" elapsed="0.216150"/>
+<status status="PASS" start="2024-11-29T19:12:41.905640" elapsed="0.119734"/>
 </kw>
 <arg>${ORDERING_EMAIL}</arg>
 <arg>${EMAIL}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.550781" elapsed="0.216150"/>
+<status status="PASS" start="2024-11-29T19:12:41.905448" elapsed="0.119961"/>
 </kw>
 <kw name="AND I enter" owner="kadenaApp">
 <kw name="Enter credential" owner="web_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-11-29T11:15:26.767945" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
+<msg time="2024-11-29T19:12:42.026080" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
 <arg>${locator}</arg>
 <arg>${credential}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-29T11:15:26.767945" elapsed="0.080871"/>
+<status status="PASS" start="2024-11-29T19:12:42.025967" elapsed="0.038937"/>
 </kw>
 <arg>${credentials}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.767945" elapsed="0.080871"/>
+<status status="PASS" start="2024-11-29T19:12:42.025759" elapsed="0.039235"/>
 </kw>
 <arg>${VALID_PASSWORD}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.766931" elapsed="0.082895"/>
+<status status="PASS" start="2024-11-29T19:12:42.025556" elapsed="0.039472"/>
 </kw>
 <kw name="WHEN I click" owner="kadenaApp">
 <kw name="Click login" owner="web_login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-11-29T11:15:26.850818" level="INFO">Clicking element 'name=login'.</msg>
+<msg time="2024-11-29T19:12:42.066503" level="INFO">Clicking element 'name=login'.</msg>
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-11-29T11:15:26.849826" elapsed="3.688966"/>
+<status status="PASS" start="2024-11-29T19:12:42.066231" elapsed="1.134871"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.849826" elapsed="3.688966"/>
+<status status="PASS" start="2024-11-29T19:12:42.065436" elapsed="1.136482"/>
 </kw>
 <arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-11-29T11:15:26.849826" elapsed="3.688966"/>
+<status status="PASS" start="2024-11-29T19:12:42.065193" elapsed="1.136987"/>
 </kw>
 <kw name="THEN I should be redirected" owner="kadenaApp">
 <kw name="Verify header text" owner="web_home">
@@ -109,105 +109,105 @@
 <kw name="Get text header" owner="web_home">
 <kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:30.540789" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:43.204543" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:30.540789" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:43.204510" elapsed="0.000071">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:31.541134" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:44.207760" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:31.541134" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:44.207423" elapsed="0.000570">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:32.541348" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:45.208651" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:32.541348" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:45.208608" elapsed="0.000075">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:33.541666" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:46.211612" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:33.541666" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:46.211442" elapsed="0.000283">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:34.541730" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:47.212979" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:34.541730" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:47.212778" elapsed="0.000339">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:35.541861" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:48.215702" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:35.541861" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:48.215438" elapsed="0.000839">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:36.542390" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:49.217829" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:36.542390" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:49.217581" elapsed="0.000438">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:37.543350" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:50.219884" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:37.543350" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:50.219576" elapsed="0.000517">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:38.544324" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:51.223302" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:38.544324" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:51.223040" elapsed="0.000474">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:39.545014" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:52.225190" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:39.545014" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:52.224935" elapsed="0.000463">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <kw name="Get Text">
-<msg time="2024-11-29T11:15:40.545336" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:53.226969" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:40.545336" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:53.226693" elapsed="0.000485">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
-<msg time="2024-11-29T11:15:40.545336" level="FAIL">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<msg time="2024-11-29T19:12:53.228026" level="FAIL">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</msg>
 <var>${actual_header_text}</var>
@@ -216,64 +216,64 @@
 <arg>Get Text</arg>
 <arg>${locator}</arg>
 <doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="FAIL" start="2024-11-29T11:15:30.540789" elapsed="10.004547">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:43.204283" elapsed="10.024972">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
 <arg>${locator}</arg>
-<status status="FAIL" start="2024-11-29T11:15:30.539790" elapsed="10.005546">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-11-29T19:12:43.203693" elapsed="10.026134">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Get Text
     SeleniumLibrary.Get Text</status>
 </kw>
-<msg time="2024-11-29T11:15:40.545336" level="INFO">${status} = False</msg>
+<msg time="2024-11-29T19:12:53.230382" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>Get text header</arg>
 <arg>${locator}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2024-11-29T11:15:30.539790" elapsed="10.005546"/>
+<status status="PASS" start="2024-11-29T19:12:43.203394" elapsed="10.027066"/>
 </kw>
 <if>
 <branch type="IF" condition="'${status}' == 'FAIL'">
 <kw name="Get page contains" owner="web_home">
 <arg>${expected_header_text}</arg>
-<status status="NOT RUN" start="2024-11-29T11:15:40.545336" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-29T19:12:53.231898" elapsed="0.000088"/>
 </kw>
-<status status="NOT RUN" start="2024-11-29T11:15:40.545336" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-29T19:12:53.230925" elapsed="0.001159"/>
 </branch>
-<status status="PASS" start="2024-11-29T11:15:40.545336" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-29T19:12:53.230817" elapsed="0.001406"/>
 </if>
 <arg>${text}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-11-29T11:15:30.539790" elapsed="10.005546"/>
+<status status="PASS" start="2024-11-29T19:12:43.203096" elapsed="10.029316"/>
 </kw>
 <arg>Ordering</arg>
 <arg>${MODULES_HEADER_BANNER}</arg>
-<status status="PASS" start="2024-11-29T11:15:30.538792" elapsed="10.006544"/>
+<status status="PASS" start="2024-11-29T19:12:43.202802" elapsed="10.029843"/>
 </kw>
 <kw name="Main Web Teardown" owner="kadenaApp" type="TEARDOWN">
 <kw name="Main Web Teardown" owner="common">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-11-29T11:15:40.604674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-29T19:12:53.549460" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-11-29T11:15:40.545336" elapsed="0.059338"/>
+<status status="PASS" start="2024-11-29T19:12:53.235223" elapsed="0.314315"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-11-29T11:15:40.604674" elapsed="6.236994"/>
+<status status="PASS" start="2024-11-29T19:12:53.549655" elapsed="0.089627"/>
 </kw>
 <doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-11-29T11:15:40.545336" elapsed="6.296332"/>
+<status status="PASS" start="2024-11-29T19:12:53.234516" elapsed="0.404844"/>
 </kw>
-<status status="PASS" start="2024-11-29T11:15:40.545336" elapsed="6.296332"/>
+<status status="PASS" start="2024-11-29T19:12:53.233662" elapsed="0.405728"/>
 </kw>
 <doc>Sample test case</doc>
 <tag>Sample</tag>
-<status status="PASS" start="2024-11-29T11:14:37.325177" elapsed="69.516491"/>
+<status status="PASS" start="2024-11-29T19:12:39.423361" elapsed="14.216100"/>
 </test>
 <doc>Testsuite for test scenarios under TS-SIT-001</doc>
-<status status="PASS" start="2024-11-29T11:14:37.090756" elapsed="69.750912"/>
+<status status="PASS" start="2024-11-29T19:12:39.296246" elapsed="14.343608"/>
 </suite>
-<status status="PASS" start="2024-11-29T11:14:37.059436" elapsed="69.782232"/>
+<status status="PASS" start="2024-11-29T19:12:39.283696" elapsed="14.356563"/>
 </suite>
 <statistics>
 <total>
@@ -288,6 +288,5 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-11-29T11:14:37.325177" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
 </errors>
 </robot>
