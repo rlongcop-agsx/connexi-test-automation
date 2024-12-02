@@ -20,32 +20,40 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: Cache pip dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.pip-cache
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install --cache-dir ~/.pip-cache -r requirements.txt
+        pip install -r requirements.txt --target dependencies/
 
     - name: Run WebDriver Manager
       run: |
         python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
 
+    - name: Save Installed Libraries
+      uses: actions/upload-artifact@v4
+      with:
+        name: dependencies
+        path: dependencies/
+
   run_tests:
     runs-on: windows-latest
-    needs: initialize_environment
+    needs: initialize_environment # Depends on the initialization job
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Run Robot Framework tests
+    - name: Download Installed Libraries
+      uses: actions/download-artifact@v4
+      with:
+        name: dependencies
+        path: dependencies/
+
+    - name: Set PYTHONPATH to Include Dependencies
+      run: |
+        set PYTHONPATH=%PYTHONPATH%;%CD%/dependencies
+
+    - name: Run Robot Framework Tests
       shell: bash
       run: |
         robot -d reports \
@@ -62,7 +70,7 @@ jobs:
         -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
         test-scenarios
 
-    - name: Archive test report
+    - name: Archive Test Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
@@ -71,20 +79,20 @@ jobs:
 
   publish_test_report:
     runs-on: ubuntu-latest
-    needs: [ run_tests ]
+    needs: run_tests
     if: always()
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Download test results artifact
+    - name: Download Test Results Artifact
       uses: actions/download-artifact@v4
       with:
         name: test-report
         path: ./reports
 
-    - name: Publish test results as a GitHub Pages site
+    - name: Publish Test Results as a GitHub Pages Site
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.GH_PAGES_TOKEN }}
