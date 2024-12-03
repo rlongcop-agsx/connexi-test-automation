@@ -1,293 +1,312 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-02T01:51:03.726840" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-03T02:43:25.056433" rpa="false" schemaversion="5">
 <suite id="s1" name="Test-Scenarios" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios">
 <suite id="s1-s1" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
-<test id="s1-s1-t1" name="Sample test" line="23">
-<kw name="Main Web Setup" owner="kadenaApp" type="SETUP">
-<kw name="Main Web Setup" owner="common">
+<test id="s1-s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="26">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-02T01:51:04.039339" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-02T01:51:04.039339" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:43:25.400188" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:43:25.400188" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-02T01:51:04.039339" elapsed="0.000000"/>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<kw name="Set Screenshot Directory" owner="Screenshot">
 <arg>reports/screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-02T01:51:04.039339" elapsed="0.000000"/>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
 </kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-02T01:51:04.039339" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-02T01:51:04.039339" elapsed="40.184193"/>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
 </kw>
-<arg>${browser}</arg>
-<doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-02T01:51:04.039339" elapsed="40.184193"/>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<arg>${BROWSER}</arg>
-<status status="PASS" start="2024-12-02T01:51:04.039339" elapsed="40.184193"/>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2024-12-03T02:43:25.400188" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<kw name="GIVEN I go to web login page" owner="kadenaApp">
-<kw name="Navigate to login page" owner="web_login">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-12-02T01:51:44.224324" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-02T01:51:44.224324" elapsed="2.797952"/>
+<msg time="2024-12-03T02:43:25.400188" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.400188" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">No application is open</status>
 </kw>
-<arg>${url}</arg>
-<status status="PASS" start="2024-12-02T01:51:44.224324" elapsed="2.797952"/>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
 </kw>
-<kw name="Verify Page Loaded" owner="web_login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-02T01:51:47.023273" elapsed="0.131756"/>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">No application is open</status>
 </kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.022276" elapsed="0.132753"/>
+<doc>Login with invalid email</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Setup failed:
+Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="36">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-03T02:43:25.400188" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:43:25.400188" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<arg>${BASE_URL}</arg>
-<arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-02T01:51:44.224324" elapsed="2.930705"/>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
 </kw>
-<kw name="WHEN I enter" owner="kadenaApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-02T01:51:47.155029" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-02T01:51:47.155029" elapsed="0.211119"/>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
 </kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.155029" elapsed="0.211119"/>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<arg>${ORDERING_EMAIL}</arg>
-<arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.155029" elapsed="0.211119"/>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2024-12-03T02:43:25.415786" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2024-12-03T02:43:25.415786" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<kw name="AND I enter" owner="kadenaApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-02T01:51:47.367150" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-02T01:51:47.367150" elapsed="0.082647"/>
+<msg time="2024-12-03T02:43:25.415786" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.415786" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.415786" elapsed="0.000000">No application is open</status>
 </kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.367150" elapsed="0.082647"/>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-03T02:43:25.415786" elapsed="0.004166"/>
 </kw>
-<arg>${VALID_PASSWORD}</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.366148" elapsed="0.083649"/>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.019764">No application is open</status>
 </kw>
-<kw name="WHEN I click" owner="kadenaApp">
-<kw name="Click login" owner="web_login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-02T01:51:47.451974" level="INFO">Clicking element 'name=login'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-02T01:51:47.450971" elapsed="2.996737"/>
+<doc>Login with invalid password</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>WEB</tag>
+<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.019764">Setup failed:
+Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t3" name="Test Case 3: Login with invalid email on the mobile custom app" line="46">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-03T02:43:25.419952" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:43:25.419952" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.450971" elapsed="2.996737"/>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
 </kw>
-<arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-02T01:51:47.450971" elapsed="2.996737"/>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
 </kw>
-<kw name="THEN I should be redirected" owner="kadenaApp">
-<kw name="Verify header text" owner="web_home">
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Get text header" owner="web_home">
-<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:50.449716" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:50.449716" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:51.449981" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:51.449981" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2024-12-03T02:43:25.419952" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:52.450350" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:52.450350" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.419952" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">No application is open</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:53.450479" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:53.450479" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:54.450891" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:54.450891" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">No application is open</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:55.450998" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:55.450998" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<doc>Login with invalid email</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>MOBILE</tag>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Setup failed:
+Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
+
+Also teardown failed:
+No application is open</status>
+</test>
+<test id="s1-s1-t4" name="Test Case 4: Login with invalid password on the mobile custom app" line="58">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
+<kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-03T02:43:25.419952" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:43:25.419952" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<arg>reports/screenshots</arg>
+<doc>Deletes all the content from the given directory.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:56.451109" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:56.451109" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<kw name="Set Screenshot Directory" owner="Screenshot">
+<arg>reports/screenshots</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:57.451648" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:57.451648" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:58.452149" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:58.452149" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:51:59.452676" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:59.452676" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2024-12-03T02:43:25.419952" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<kw name="Get Text">
-<msg time="2024-12-02T01:52:00.453155" level="FAIL">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:52:00.453155" elapsed="0.000000">Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.419952" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">No application is open</status>
 </kw>
-<msg time="2024-12-02T01:52:00.453155" level="FAIL">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</msg>
-<var>${actual_header_text}</var>
-<arg>10</arg>
-<arg>1s</arg>
-<arg>Get Text</arg>
-<arg>${locator}</arg>
-<doc>Runs the specified keyword and retries if it fails.</doc>
-<status status="FAIL" start="2024-12-02T01:51:50.449716" elapsed="10.003439">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-03T02:43:25.419952" elapsed="0.011520"/>
 </kw>
-<arg>${locator}</arg>
-<status status="FAIL" start="2024-12-02T01:51:50.449716" elapsed="10.003439">Keyword 'Get Text' failed after retrying for 10 seconds. The last error was: Multiple keywords with name 'Get Text' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Get Text
-    SeleniumLibrary.Get Text</status>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.011520">No application is open</status>
 </kw>
-<msg time="2024-12-02T01:52:00.453155" level="INFO">${status} = False</msg>
-<var>${status}</var>
-<arg>Get text header</arg>
-<arg>${locator}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2024-12-02T01:51:50.448712" elapsed="10.004443"/>
-</kw>
-<if>
-<branch type="IF" condition="'${status}' == 'FAIL'">
-<kw name="Get page contains" owner="web_home">
-<arg>${expected_header_text}</arg>
-<status status="NOT RUN" start="2024-12-02T01:52:00.453155" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2024-12-02T01:52:00.453155" elapsed="0.000000"/>
-</branch>
-<status status="PASS" start="2024-12-02T01:52:00.453155" elapsed="0.000000"/>
-</if>
-<arg>${text}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-02T01:51:50.448712" elapsed="10.004443"/>
-</kw>
-<arg>Ordering</arg>
-<arg>${MODULES_HEADER_BANNER}</arg>
-<status status="PASS" start="2024-12-02T01:51:50.447708" elapsed="10.005447"/>
-</kw>
-<kw name="Main Web Teardown" owner="kadenaApp" type="TEARDOWN">
-<kw name="Main Web Teardown" owner="common">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-12-02T01:52:00.513953" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-02T01:52:00.453155" elapsed="0.060798"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-02T01:52:00.513953" elapsed="6.244119"/>
-</kw>
-<doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-02T01:52:00.453155" elapsed="6.304917"/>
-</kw>
-<status status="PASS" start="2024-12-02T01:52:00.453155" elapsed="6.304917"/>
-</kw>
-<doc>Sample test case</doc>
-<tag>Sample</tag>
-<status status="PASS" start="2024-12-02T01:51:04.039339" elapsed="62.718733"/>
+<doc>Login with invalid password</doc>
+<tag>M0MAIN-SIT-001</tag>
+<tag>MOBILE</tag>
+<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.011520">Setup failed:
+Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
+
+Also teardown failed:
+No application is open</status>
 </test>
 <doc>Login with invalid and valid credentials</doc>
-<status status="PASS" start="2024-12-02T01:51:03.758089" elapsed="62.999983"/>
+<status status="FAIL" start="2024-12-03T02:43:25.087684" elapsed="0.343788"/>
 </suite>
-<status status="PASS" start="2024-12-02T01:51:03.726840" elapsed="63.031232"/>
+<status status="FAIL" start="2024-12-03T02:43:25.072035" elapsed="0.359437"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Sample</stat>
+<stat pass="0" fail="4" skip="0">M0MAIN-SIT-001</stat>
+<stat pass="0" fail="2" skip="0">MOBILE</stat>
+<stat pass="0" fail="2" skip="0">WEB</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
+<stat pass="0" fail="4" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
+<stat pass="0" fail="4" skip="0" id="s1-s1" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-12-02T01:51:04.039339" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-12-03T02:43:25.337687" level="WARN">Imported resource file 'D:\a\connexi-test-automation\connexi-test-automation\resources\PO_mobile\mobile_home.robot' is empty.</msg>
+<msg time="2024-12-03T02:43:25.400188" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-12-03T02:43:25.400188" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.415786" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
 </errors>
 </robot>
