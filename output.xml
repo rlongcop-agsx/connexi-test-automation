@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-03T02:43:25.056433" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-03T02:53:00.409213" rpa="false" schemaversion="5">
 <suite id="s1" name="Test-Scenarios" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios">
 <suite id="s1-s1" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
 <test id="s1-s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="26">
 <kw name="Main Mobile Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-03T02:43:25.400188" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-03T02:43:25.400188" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<msg time="2024-12-03T02:53:00.690457" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:53:00.690457" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.690457" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Set Screenshot Directory" owner="Screenshot">
 <arg>reports/screenshots</arg>
 <doc>Sets the directory where screenshots are saved.</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.690457" elapsed="0.000000"/>
 </kw>
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${APPIUM_URL}</arg>
@@ -32,39 +32,39 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.690457" elapsed="0.000000"/>
 </kw>
 <doc>This is the main setup for the kadena mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.690457" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="AppiumLibrary">
 <kw name="Capture Page Screenshot">
-<msg time="2024-12-03T02:43:25.400188" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.690457" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-12-03T02:53:00.690457" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<msg time="2024-12-03T02:43:25.400188" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.400188" level="FAIL">No application is open</msg>
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">No application is open</msg>
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.690457" elapsed="0.015623">No application is open</status>
 </kw>
 <kw name="Close All Applications" owner="AppiumLibrary">
 <doc>Closes all open applications.</doc>
-<status status="PASS" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-03T02:53:00.706080" elapsed="0.000000"/>
 </kw>
 <doc>This is the main teardown for the mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.690457" elapsed="0.015623">No application is open</status>
 </kw>
 <doc>Login with invalid email</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>WEB</tag>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Setup failed:
+<status status="FAIL" start="2024-12-03T02:53:00.690457" elapsed="0.015623">Setup failed:
 Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
 
 Also teardown failed:
@@ -73,16 +73,16 @@ No application is open</status>
 <test id="s1-s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="36">
 <kw name="Main Mobile Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-03T02:43:25.400188" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-03T02:43:25.400188" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<msg time="2024-12-03T02:53:00.706080" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Set Screenshot Directory" owner="Screenshot">
 <arg>reports/screenshots</arg>
 <doc>Sets the directory where screenshots are saved.</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.706080" elapsed="0.000000"/>
 </kw>
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${APPIUM_URL}</arg>
@@ -100,39 +100,39 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.400188" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.706080" elapsed="0.000000"/>
 </kw>
 <doc>This is the main setup for the kadena mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="AppiumLibrary">
 <kw name="Capture Page Screenshot">
-<msg time="2024-12-03T02:43:25.415786" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-03T02:43:25.415786" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<msg time="2024-12-03T02:43:25.415786" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.415786" level="FAIL">No application is open</msg>
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">No application is open</msg>
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.415786" elapsed="0.000000">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">No application is open</status>
 </kw>
 <kw name="Close All Applications" owner="AppiumLibrary">
 <doc>Closes all open applications.</doc>
-<status status="PASS" start="2024-12-03T02:43:25.415786" elapsed="0.004166"/>
+<status status="PASS" start="2024-12-03T02:53:00.706080" elapsed="0.000000"/>
 </kw>
 <doc>This is the main teardown for the mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.019764">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">No application is open</status>
 </kw>
 <doc>Login with invalid password</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>WEB</tag>
-<status status="FAIL" start="2024-12-03T02:43:25.400188" elapsed="0.019764">Setup failed:
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Setup failed:
 Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
 
 Also teardown failed:
@@ -141,16 +141,16 @@ No application is open</status>
 <test id="s1-s1-t3" name="Test Case 3: Login with invalid email on the mobile custom app" line="46">
 <kw name="Main Mobile Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-03T02:43:25.419952" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-03T02:43:25.419952" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<msg time="2024-12-03T02:53:00.706080" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Set Screenshot Directory" owner="Screenshot">
 <arg>reports/screenshots</arg>
 <doc>Sets the directory where screenshots are saved.</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.706080" elapsed="0.000000"/>
 </kw>
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${APPIUM_URL}</arg>
@@ -168,39 +168,39 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.706080" elapsed="0.000000"/>
 </kw>
 <doc>This is the main setup for the kadena mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="AppiumLibrary">
 <kw name="Capture Page Screenshot">
-<msg time="2024-12-03T02:43:25.419952" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.419952" level="FAIL">No application is open</msg>
+<msg time="2024-12-03T02:53:00.706080" level="FAIL">No application is open</msg>
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.000000">No application is open</status>
 </kw>
 <kw name="Close All Applications" owner="AppiumLibrary">
 <doc>Closes all open applications.</doc>
-<status status="PASS" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-03T02:53:00.721716" elapsed="0.000000"/>
 </kw>
 <doc>This is the main teardown for the mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.015636">No application is open</status>
 </kw>
 <doc>Login with invalid email</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>MOBILE</tag>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Setup failed:
+<status status="FAIL" start="2024-12-03T02:53:00.706080" elapsed="0.015636">Setup failed:
 Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
 
 Also teardown failed:
@@ -209,16 +209,16 @@ No application is open</status>
 <test id="s1-s1-t4" name="Test Case 4: Login with invalid password on the mobile custom app" line="58">
 <kw name="Main Mobile Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-03T02:43:25.419952" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-03T02:43:25.419952" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
+<msg time="2024-12-03T02:53:00.721716" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-03T02:53:00.721716" level="FAIL">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.721716" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Set Screenshot Directory" owner="Screenshot">
 <arg>reports/screenshots</arg>
 <doc>Sets the directory where screenshots are saved.</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.721716" elapsed="0.000000"/>
 </kw>
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${APPIUM_URL}</arg>
@@ -236,48 +236,48 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="NOT RUN" start="2024-12-03T02:43:25.419952" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-12-03T02:53:00.721716" elapsed="0.000000"/>
 </kw>
 <doc>This is the main setup for the kadena mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
+<status status="FAIL" start="2024-12-03T02:53:00.721716" elapsed="0.000000">Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.</status>
 </kw>
 <kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="AppiumLibrary">
 <kw name="Capture Page Screenshot">
-<msg time="2024-12-03T02:43:25.419952" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.721716" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<status status="FAIL" start="2024-12-03T02:53:00.721716" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.721716" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.419952" level="FAIL">No application is open</msg>
+<msg time="2024-12-03T02:53:00.721716" level="FAIL">No application is open</msg>
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.000000">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.721716" elapsed="0.000000">No application is open</status>
 </kw>
 <kw name="Close All Applications" owner="AppiumLibrary">
 <doc>Closes all open applications.</doc>
-<status status="PASS" start="2024-12-03T02:43:25.419952" elapsed="0.011520"/>
+<status status="PASS" start="2024-12-03T02:53:00.721716" elapsed="0.000000"/>
 </kw>
 <doc>This is the main teardown for the mobile app</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.011520">No application is open</status>
+<status status="FAIL" start="2024-12-03T02:53:00.721716" elapsed="0.000000">No application is open</status>
 </kw>
 <doc>Login with invalid password</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>MOBILE</tag>
-<status status="FAIL" start="2024-12-03T02:43:25.419952" elapsed="0.011520">Setup failed:
+<status status="FAIL" start="2024-12-03T02:53:00.721716" elapsed="0.000000">Setup failed:
 Directory 'D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots' does not exist.
 
 Also teardown failed:
 No application is open</status>
 </test>
 <doc>Login with invalid and valid credentials</doc>
-<status status="FAIL" start="2024-12-03T02:43:25.087684" elapsed="0.343788"/>
+<status status="FAIL" start="2024-12-03T02:53:00.440464" elapsed="0.281252"/>
 </suite>
-<status status="FAIL" start="2024-12-03T02:43:25.072035" elapsed="0.359437"/>
+<status status="FAIL" start="2024-12-03T02:53:00.409213" elapsed="0.312503"/>
 </suite>
 <statistics>
 <total>
@@ -294,18 +294,18 @@ No application is open</status>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-12-03T02:43:25.337687" level="WARN">Imported resource file 'D:\a\connexi-test-automation\connexi-test-automation\resources\PO_mobile\mobile_home.robot' is empty.</msg>
-<msg time="2024-12-03T02:43:25.400188" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
-<msg time="2024-12-03T02:43:25.400188" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.627959" level="WARN">Imported resource file 'D:\a\connexi-test-automation\connexi-test-automation\resources\PO_mobile\mobile_home.robot' is empty.</msg>
+<msg time="2024-12-03T02:53:00.690457" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-12-03T02:53:00.706080" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.415786" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.706080" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-03T02:43:25.419952" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+<msg time="2024-12-03T02:53:00.721716" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
     AppiumLibrary.Capture Page Screenshot
     SeleniumLibrary.Capture Page Screenshot</msg>
 </errors>
