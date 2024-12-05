@@ -32,10 +32,13 @@ jobs:
         yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
         $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "system-images;android-30;google_apis;x86_64" "emulator"
 
+    - name: Add Android SDK to PATH
+      run: echo "::add-path::${ANDROID_HOME}/platform-tools"
+
     - name: Create and Start Emulator
       run: |
         $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
-        nohup $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-boot-anim -no-window -gpu off -writable-system &
+        nohup $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-boot-anim -no-window -gpu off -no-accel -writable-system &
         adb wait-for-device
         adb shell input keyevent 82
 
