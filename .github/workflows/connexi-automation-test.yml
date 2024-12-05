@@ -33,7 +33,8 @@ jobs:
         $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "system-images;android-30;google_apis;x86_64" "emulator"
 
     - name: Add Android SDK to PATH
-      run: echo "::add-path::${ANDROID_HOME}/platform-tools"
+      run: echo "${ANDROID_HOME}/platform-tools" >> $GITHUB_PATH
+
 
     - name: Create and Start Emulator
       run: |
