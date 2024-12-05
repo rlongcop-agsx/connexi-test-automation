@@ -1,479 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-05T05:30:26.540145" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-05T05:32:48.693324" rpa="false" schemaversion="5">
 <suite id="s1" name="Test-Scenarios" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios">
-<suite id="s1-s1" name="Sample" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\sample.robot">
-<test id="s1-s1-t1" name="Test Case 3: Login with invalid email on the mobile custom app" line="10">
-<kw name="Main Mobile Setup" owner="common" type="SETUP">
-<kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-05T05:30:26.884011" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-05T05:30:26.884011" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<arg>reports/screenshots</arg>
-<doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-05T05:30:26.884011" elapsed="0.000000"/>
-</kw>
-<kw name="Set Screenshot Directory" owner="Screenshot">
-<arg>reports/screenshots</arg>
-<doc>Sets the directory where screenshots are saved.</doc>
-<status status="PASS" start="2024-12-05T05:30:26.884011" elapsed="0.000000"/>
-</kw>
-<kw name="Open Application" owner="AppiumLibrary">
-<msg time="2024-12-05T05:30:30.979392" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77D550&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:30:35.043257" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77DC10&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:30:39.109197" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77E5A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<kw name="Capture Page Screenshot">
-<msg time="2024-12-05T05:30:43.183403" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-05T05:30:43.183403" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</status>
-</kw>
-<msg time="2024-12-05T05:30:43.183403" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:30:43.183403" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77EF30&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
-<arg>${APPIUM_URL}</arg>
-<arg>platformName=${PLATFORM_NAME}</arg>
-<arg>deviceName=${DEVICE_NAME}</arg>
-<arg>platformVersion=${PLATFORM_VERSION}</arg>
-<arg>automationName=${AUTOMATION_NAME}</arg>
-<arg>app=${APP}</arg>
-<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
-<arg>enableAutoDownload = true</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://appium.io/docs/en/2.1/cli/args/
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="FAIL" start="2024-12-05T05:30:26.884011" elapsed="16.393142">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77EF30&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
-</kw>
-<doc>This is the main setup for the kadena mobile app</doc>
-<status status="FAIL" start="2024-12-05T05:30:26.884011" elapsed="16.393142">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77EF30&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
-</kw>
-<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<kw name="Capture Page Screenshot">
-<msg time="2024-12-05T05:30:43.292751" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-05T05:30:43.292751" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</status>
-</kw>
-<msg time="2024-12-05T05:30:43.292751" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:30:43.292751" level="FAIL">No application is open</msg>
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-12-05T05:30:43.292751" elapsed="0.000000">No application is open</status>
-</kw>
-<kw name="Close All Applications" owner="AppiumLibrary">
-<doc>Closes all open applications.</doc>
-<status status="PASS" start="2024-12-05T05:30:43.292751" elapsed="0.000000"/>
-</kw>
-<doc>This is the main teardown for the mobile app</doc>
-<status status="FAIL" start="2024-12-05T05:30:43.277153" elapsed="0.015598">No application is open</status>
-</kw>
-<doc>Login with invalid email</doc>
-<tag>M0MAIN-SIT-001</tag>
-<tag>MOBILE</tag>
-<status status="FAIL" start="2024-12-05T05:30:26.868401" elapsed="16.424350">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77EF30&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-
-Also teardown failed:
-No application is open</status>
-</test>
-<status status="FAIL" start="2024-12-05T05:30:26.555773" elapsed="16.736978"/>
-</suite>
-<suite id="s1-s2" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
-<test id="s1-s2-t1" name="Test Case 1: Login with invalid email on the web custom app" line="25">
+<suite id="s1-s1" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
+<test id="s1-s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="25">
 <kw name="Main Web Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-05T05:30:43.308378" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-05T05:30:43.308378" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-05T05:32:49.130948" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-05T05:32:49.130948" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-05T05:30:43.308378" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-05T05:32:49.130948" elapsed="0.000000"/>
 </kw>
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:30:43.308378" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<msg time="2024-12-05T05:32:49.130948" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-05T05:30:43.308378" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-05T05:32:49.130948" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:30:43.308378" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<msg time="2024-12-05T05:32:49.130948" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-05T05:30:43.308378" elapsed="35.528148"/>
+<status status="PASS" start="2024-12-05T05:32:49.130948" elapsed="44.374486"/>
 </kw>
 <arg>${BROWSER}</arg>
 <doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-05T05:30:43.308378" elapsed="35.528148"/>
+<status status="PASS" start="2024-12-05T05:32:49.115325" elapsed="44.390109"/>
 </kw>
 <kw name="GIVEN I go to web login page" owner="kadenaWebApp">
 <kw name="Navigate to login page" owner="web_login">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:18.838340" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<msg time="2024-12-05T05:33:33.506398" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-05T05:31:18.838149" elapsed="2.160028"/>
+<status status="PASS" start="2024-12-05T05:33:33.506398" elapsed="2.681455"/>
 </kw>
 <arg>${url}</arg>
-<status status="PASS" start="2024-12-05T05:31:18.837273" elapsed="2.161172"/>
+<status status="PASS" start="2024-12-05T05:33:33.506398" elapsed="2.681455"/>
 </kw>
 <kw name="Verify Page Loaded" owner="web_login">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-05T05:31:20.999221" elapsed="0.144030"/>
+<status status="PASS" start="2024-12-05T05:33:36.188796" elapsed="0.127695"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:20.998770" elapsed="0.144481"/>
+<status status="PASS" start="2024-12-05T05:33:36.187853" elapsed="0.128638"/>
 </kw>
 <arg>${BASE_URL}</arg>
 <arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-05T05:31:18.837273" elapsed="2.306512"/>
+<status status="PASS" start="2024-12-05T05:33:33.506277" elapsed="2.810214"/>
 </kw>
 <kw name="WHEN I enter in web" owner="kadenaWebApp">
 <kw name="Enter credential" owner="web_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:21.144851" level="INFO">Typing text 'invalid@email.com' into text field 'name=username'.</msg>
+<msg time="2024-12-05T05:33:36.316491" level="INFO">Typing text 'invalid@email.com' into text field 'name=username'.</msg>
 <arg>${locator}</arg>
 <arg>${credential}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T05:31:21.144318" elapsed="0.202602"/>
+<status status="PASS" start="2024-12-05T05:33:36.316491" elapsed="0.263659"/>
 </kw>
 <arg>${credentials}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:21.144318" elapsed="0.203129"/>
+<status status="PASS" start="2024-12-05T05:33:36.316491" elapsed="0.264794"/>
 </kw>
 <arg>invalid@email.com</arg>
 <arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-05T05:31:21.143785" elapsed="0.204042"/>
+<status status="PASS" start="2024-12-05T05:33:36.316491" elapsed="0.264794"/>
 </kw>
 <kw name="AND I enter in web" owner="kadenaWebApp">
 <kw name="Enter credential" owner="web_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:21.349656" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
+<msg time="2024-12-05T05:33:36.583047" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
 <arg>${locator}</arg>
 <arg>${credential}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T05:31:21.349112" elapsed="0.128508"/>
+<status status="PASS" start="2024-12-05T05:33:36.582049" elapsed="0.101834"/>
 </kw>
 <arg>${credentials}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:21.349082" elapsed="0.128538"/>
+<status status="PASS" start="2024-12-05T05:33:36.582049" elapsed="0.101834"/>
 </kw>
 <arg>${VALID_PASSWORD}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-05T05:31:21.347827" elapsed="0.129793"/>
+<status status="PASS" start="2024-12-05T05:33:36.582049" elapsed="0.101834"/>
 </kw>
 <kw name="WHEN I click in web" owner="kadenaWebApp">
 <kw name="Click login" owner="web_login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:21.478712" level="INFO">Clicking element 'name=login'.</msg>
+<msg time="2024-12-05T05:33:36.684880" level="INFO">Clicking element 'name=login'.</msg>
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T05:31:21.478712" elapsed="1.488908"/>
+<status status="PASS" start="2024-12-05T05:33:36.684880" elapsed="1.579336"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:21.478170" elapsed="1.489450"/>
+<status status="PASS" start="2024-12-05T05:33:36.684880" elapsed="1.579336"/>
 </kw>
 <arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-05T05:31:21.478170" elapsed="1.489450"/>
+<status status="PASS" start="2024-12-05T05:33:36.683883" elapsed="1.580333"/>
 </kw>
 <kw name="THEN Message should display in web" owner="kadenaWebApp">
 <kw name="Validate Error Message" owner="web_login">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:22.983824" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<msg time="2024-12-05T05:33:38.282503" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
 <arg>${text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-12-05T05:31:22.968614" elapsed="0.015210"/>
+<status status="PASS" start="2024-12-05T05:33:38.265211" elapsed="0.017292"/>
 </kw>
 <arg>${text}</arg>
-<status status="PASS" start="2024-12-05T05:31:22.968614" elapsed="0.015210"/>
+<status status="PASS" start="2024-12-05T05:33:38.265211" elapsed="0.017739"/>
 </kw>
 <arg>Invalid username or password.</arg>
-<status status="PASS" start="2024-12-05T05:31:22.967620" elapsed="0.016204"/>
+<status status="PASS" start="2024-12-05T05:33:38.265211" elapsed="0.017739"/>
 </kw>
 <kw name="Main Web Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:23.038978" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-05T05:33:38.366645" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-05T05:31:22.983824" elapsed="0.055154"/>
+<status status="PASS" start="2024-12-05T05:33:38.282950" elapsed="0.083695"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-05T05:31:23.038978" elapsed="6.232712"/>
+<status status="PASS" start="2024-12-05T05:33:38.367642" elapsed="6.264870"/>
 </kw>
 <doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-05T05:31:22.983824" elapsed="6.287866"/>
+<status status="PASS" start="2024-12-05T05:33:38.282950" elapsed="6.349562"/>
 </kw>
 <doc>Login with invalid email</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>WEB</tag>
-<status status="PASS" start="2024-12-05T05:30:43.308378" elapsed="45.963312"/>
+<status status="PASS" start="2024-12-05T05:32:49.115325" elapsed="55.517187"/>
 </test>
-<test id="s1-s2-t2" name="Test Case 2: Login with invalid password on the web custom app" line="35">
+<test id="s1-s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="35">
 <kw name="Main Web Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-05T05:31:29.271690" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-05T05:31:29.271690" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-05T05:33:44.632512" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-05T05:33:44.632512" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-05T05:31:29.271690" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-05T05:33:44.632512" elapsed="0.000000"/>
 </kw>
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:29.271690" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<msg time="2024-12-05T05:33:44.632512" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-05T05:31:29.271690" elapsed="0.000000"/>
+<status status="PASS" start="2024-12-05T05:33:44.632512" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:29.271690" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<msg time="2024-12-05T05:33:44.632512" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-05T05:31:29.271690" elapsed="1.324542"/>
+<status status="PASS" start="2024-12-05T05:33:44.632512" elapsed="1.367046"/>
 </kw>
 <arg>${BROWSER}</arg>
 <doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-05T05:31:29.271690" elapsed="1.324542"/>
+<status status="PASS" start="2024-12-05T05:33:44.632512" elapsed="1.367046"/>
 </kw>
 <kw name="GIVEN I go to web login page" owner="kadenaWebApp">
 <kw name="Navigate to login page" owner="web_login">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:30.598641" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
+<msg time="2024-12-05T05:33:46.000564" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-05T05:31:30.597767" elapsed="2.849759"/>
+<status status="PASS" start="2024-12-05T05:33:46.000564" elapsed="3.187387"/>
 </kw>
 <arg>${url}</arg>
-<status status="PASS" start="2024-12-05T05:31:30.596232" elapsed="2.852301"/>
+<status status="PASS" start="2024-12-05T05:33:45.999558" elapsed="3.188393"/>
 </kw>
 <kw name="Verify Page Loaded" owner="web_login">
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-05T05:31:33.448533" elapsed="0.013801"/>
+<status status="PASS" start="2024-12-05T05:33:49.187951" elapsed="0.016361"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.448533" elapsed="0.013801"/>
+<status status="PASS" start="2024-12-05T05:33:49.187951" elapsed="0.016361"/>
 </kw>
 <arg>${BASE_URL}</arg>
 <arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-05T05:31:30.596232" elapsed="2.866102"/>
+<status status="PASS" start="2024-12-05T05:33:45.999558" elapsed="3.204754"/>
 </kw>
 <kw name="WHEN I enter in web" owner="kadenaWebApp">
 <kw name="Enter credential" owner="web_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:33.465822" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
+<msg time="2024-12-05T05:33:49.205327" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
 <arg>${locator}</arg>
 <arg>${credential}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T05:31:33.462334" elapsed="0.107334"/>
+<status status="PASS" start="2024-12-05T05:33:49.205327" elapsed="0.101862"/>
 </kw>
 <arg>${credentials}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.462334" elapsed="0.107334"/>
+<status status="PASS" start="2024-12-05T05:33:49.205327" elapsed="0.101862"/>
 </kw>
 <arg>${ORDERING_EMAIL}</arg>
 <arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.462334" elapsed="0.107334"/>
+<status status="PASS" start="2024-12-05T05:33:49.205327" elapsed="0.101862"/>
 </kw>
 <kw name="AND I enter in web" owner="kadenaWebApp">
 <kw name="Enter credential" owner="web_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:33.571674" level="INFO">Typing text 'invalid_password' into text field 'name=password'.</msg>
+<msg time="2024-12-05T05:33:49.308204" level="INFO">Typing text 'invalid_password' into text field 'name=password'.</msg>
 <arg>${locator}</arg>
 <arg>${credential}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T05:31:33.570669" elapsed="0.091886"/>
+<status status="PASS" start="2024-12-05T05:33:49.308204" elapsed="0.088242"/>
 </kw>
 <arg>${credentials}</arg>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.570669" elapsed="0.091886"/>
+<status status="PASS" start="2024-12-05T05:33:49.308204" elapsed="0.088242"/>
 </kw>
 <arg>invalid_password</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.570669" elapsed="0.092883"/>
+<status status="PASS" start="2024-12-05T05:33:49.307189" elapsed="0.089257"/>
 </kw>
 <kw name="WHEN I click in web" owner="kadenaWebApp">
 <kw name="Click login" owner="web_login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:33.664547" level="INFO">Clicking element 'name=login'.</msg>
+<msg time="2024-12-05T05:33:49.397440" level="INFO">Clicking element 'name=login'.</msg>
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T05:31:33.663552" elapsed="1.197638"/>
+<status status="PASS" start="2024-12-05T05:33:49.397440" elapsed="1.410766"/>
 </kw>
 <arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.663552" elapsed="1.197638"/>
+<status status="PASS" start="2024-12-05T05:33:49.397440" elapsed="1.410766"/>
 </kw>
 <arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-05T05:31:33.663552" elapsed="1.197638"/>
+<status status="PASS" start="2024-12-05T05:33:49.397440" elapsed="1.410766"/>
 </kw>
 <kw name="THEN Message should display in web" owner="kadenaWebApp">
 <kw name="Validate Error Message" owner="web_login">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:34.877615" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
+<msg time="2024-12-05T05:33:50.824795" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
 <arg>${text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-12-05T05:31:34.862186" elapsed="0.016663"/>
+<status status="PASS" start="2024-12-05T05:33:50.809204" elapsed="0.015591"/>
 </kw>
 <arg>${text}</arg>
-<status status="PASS" start="2024-12-05T05:31:34.861190" elapsed="0.017659"/>
+<status status="PASS" start="2024-12-05T05:33:50.808206" elapsed="0.016589"/>
 </kw>
 <arg>Invalid username or password.</arg>
-<status status="PASS" start="2024-12-05T05:31:34.861190" elapsed="0.017659"/>
+<status status="PASS" start="2024-12-05T05:33:50.808206" elapsed="0.016589"/>
 </kw>
 <kw name="Main Web Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-12-05T05:31:34.945813" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-05T05:33:50.897019" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-05T05:31:34.878849" elapsed="0.066964"/>
+<status status="PASS" start="2024-12-05T05:33:50.825795" elapsed="0.071224"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-05T05:31:34.946816" elapsed="6.113354"/>
+<status status="PASS" start="2024-12-05T05:33:50.898020" elapsed="6.162321"/>
 </kw>
 <doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-05T05:31:34.878849" elapsed="6.181321"/>
+<status status="PASS" start="2024-12-05T05:33:50.825795" elapsed="6.234546"/>
 </kw>
 <doc>Login with invalid password</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>WEB</tag>
-<status status="PASS" start="2024-12-05T05:31:29.271690" elapsed="11.788480"/>
-</test>
-<test id="s1-s2-t3" name="Test Case 3: Login with invalid email on the mobile custom app" line="45">
-<kw name="Main Mobile Setup" owner="common" type="SETUP">
-<kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-05T05:31:41.060170" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-05T05:31:41.060170" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<arg>reports/screenshots</arg>
-<doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-05T05:31:41.060170" elapsed="0.000000"/>
-</kw>
-<kw name="Set Screenshot Directory" owner="Screenshot">
-<arg>reports/screenshots</arg>
-<doc>Sets the directory where screenshots are saved.</doc>
-<status status="PASS" start="2024-12-05T05:31:41.060170" elapsed="0.000000"/>
-</kw>
-<kw name="Open Application" owner="AppiumLibrary">
-<msg time="2024-12-05T05:31:45.108959" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF8C7020&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:31:49.165216" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF924140&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:31:53.216118" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF924560&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<kw name="Capture Page Screenshot">
-<msg time="2024-12-05T05:31:57.234582" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-05T05:31:57.234582" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</status>
-</kw>
-<msg time="2024-12-05T05:31:57.234582" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:31:57.234582" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77CE90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
-<arg>${APPIUM_URL}</arg>
-<arg>platformName=${PLATFORM_NAME}</arg>
-<arg>deviceName=${DEVICE_NAME}</arg>
-<arg>platformVersion=${PLATFORM_VERSION}</arg>
-<arg>automationName=${AUTOMATION_NAME}</arg>
-<arg>app=${APP}</arg>
-<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
-<arg>enableAutoDownload = true</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://appium.io/docs/en/2.1/cli/args/
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="FAIL" start="2024-12-05T05:31:41.060170" elapsed="16.174412">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77CE90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
-</kw>
-<doc>This is the main setup for the kadena mobile app</doc>
-<status status="FAIL" start="2024-12-05T05:31:41.060170" elapsed="16.174412">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77CE90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
-</kw>
-<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<kw name="Capture Page Screenshot">
-<msg time="2024-12-05T05:31:57.234582" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<status status="FAIL" start="2024-12-05T05:31:57.234582" elapsed="0.000000">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</status>
-</kw>
-<msg time="2024-12-05T05:31:57.234582" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:31:57.234582" level="FAIL">No application is open</msg>
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-12-05T05:31:57.234582" elapsed="0.000000">No application is open</status>
-</kw>
-<kw name="Close All Applications" owner="AppiumLibrary">
-<doc>Closes all open applications.</doc>
-<status status="PASS" start="2024-12-05T05:31:57.234582" elapsed="0.000000"/>
-</kw>
-<doc>This is the main teardown for the mobile app</doc>
-<status status="FAIL" start="2024-12-05T05:31:57.234582" elapsed="0.000000">No application is open</status>
-</kw>
-<doc>Login with invalid email</doc>
-<tag>M0MAIN-SIT-001</tag>
-<tag>MOBILE</tag>
-<status status="FAIL" start="2024-12-05T05:31:41.060170" elapsed="16.174412">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77CE90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-
-Also teardown failed:
-No application is open</status>
+<status status="PASS" start="2024-12-05T05:33:44.632512" elapsed="12.427829"/>
 </test>
 <doc>Login with invalid and valid credentials</doc>
-<status status="FAIL" start="2024-12-05T05:30:43.292751" elapsed="73.941831"/>
+<status status="PASS" start="2024-12-05T05:32:48.740197" elapsed="68.320144"/>
 </suite>
-<status status="FAIL" start="2024-12-05T05:30:26.540145" elapsed="90.694437"/>
+<status status="PASS" start="2024-12-05T05:32:48.693324" elapsed="68.367017"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="2" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="2" skip="0">M0MAIN-SIT-001</stat>
-<stat pass="0" fail="2" skip="0">MOBILE</stat>
+<stat pass="2" fail="0" skip="0">M0MAIN-SIT-001</stat>
 <stat pass="2" fail="0" skip="0">WEB</stat>
 </tag>
 <suite>
-<stat pass="2" fail="2" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Sample">Test-Scenarios.Sample</stat>
-<stat pass="2" fail="1" skip="0" id="s1-s2" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-12-05T05:30:26.868401" level="WARN">Imported resource file 'D:\a\connexi-test-automation\connexi-test-automation\resources\PO_mobile\mobile_home.robot' is empty.</msg>
-<msg time="2024-12-05T05:30:26.868401" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
-<msg time="2024-12-05T05:30:30.979392" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77D550&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:30:35.043257" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77DC10&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:30:39.109197" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF77E5A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:30:43.183403" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:30:43.292751" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:30:43.308378" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
-<msg time="2024-12-05T05:30:43.308378" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
-<msg time="2024-12-05T05:31:29.271690" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
-<msg time="2024-12-05T05:31:45.108959" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF8C7020&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:31:49.165216" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF924140&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:31:53.216118" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001A5EF924560&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session</msg>
-<msg time="2024-12-05T05:31:57.234582" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
-<msg time="2024-12-05T05:31:57.234582" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Capture Page Screenshot
-    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-05T05:32:49.115325" level="WARN">Imported resource file 'D:\a\connexi-test-automation\connexi-test-automation\resources\PO_mobile\mobile_home.robot' is empty.</msg>
+<msg time="2024-12-05T05:32:49.115325" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-12-05T05:32:49.130948" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<msg time="2024-12-05T05:33:44.632512" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
 </errors>
 </robot>
