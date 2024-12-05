@@ -37,7 +37,7 @@ jobs:
 
     - name: Set up emulator
       run: |
-        $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;arm64-v8a" --device "pixel"
+        $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
         $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-boot-anim -no-window -gpu off -no-accel -no-snapshot -writable-system -verbose &
         boot_completed=""
         timeout=0
@@ -51,6 +51,7 @@ jobs:
             exit 1
         fi
         echo "Emulator booted successfully."
+    
     
 
     - name: Set up Python
