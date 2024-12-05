@@ -8,7 +8,7 @@ Resource                PO_mobile/mobile_login.robot
 I navigate to mobile login page
     [Arguments]                         ${locator}    
     mobile_login.Verify page loaded     ${locator}
-    mobile_login.Verify page loaded     ${locator}
+    mobile_login.Click login             ${locator}
 
 I enter in mobile
     [Arguments]                         ${credentials}    ${locator}

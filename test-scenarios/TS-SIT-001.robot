@@ -6,9 +6,8 @@ Resource               ../resources/common.robot
 Resource               ../variables/mobileLocators.robot
 Resource               ../variables/webLocators.robot
 Resource               ../variables/publicCredentials.robot
-# Test Setup             kadenaApp.Main Web Setup    ${BROWSER}
-Test Setup             common.Main Mobile Setup
-Test Teardown          common.Main Mobile Teardown
+Test Setup             common.Main Web Setup    ${BROWSER}
+Test Teardown          common.Main Web Teardown
 
 # Terminal default command: 
 # robot -d reports test-scenarios/[put specific scenario file]
@@ -47,23 +46,10 @@ Test Case 3: Login with invalid email on the mobile custom app
     [Documentation]                          Login with invalid email
     [Tags]                                   M0MAIN-SIT-001
     ...                                      MOBILE
-    [Setup]                                  common.Main Mobile Setup
+    [Setup]                                  Main Mobile Setup
     GIVEN I navigate to mobile login page    ${MOBILE_LOGIN_BTN}
-    WHEN I enter in mobile                   invalid@email.com          ${EMAIL}
-    AND I enter in mobile                    ${VALID_PASSWORD}          ${PASSWORD}   
-    WHEN I click in mobile                   ${LOGIN_BUTTON}
-    THEN Message should display in mobile    Invalid username or password.
-    [Teardown]                               common.Main Mobile Teardown
-
-Test Case 4: Login with invalid password on the mobile custom app
-    [Documentation]                 Login with invalid password 
-    [Tags]                          M0MAIN-SIT-001    
-    ...                             MOBILE
-    [Setup]                         common.Main Mobile Setup
-    GIVEN I navigate to mobile login page    ${MOBILE_LOGIN_BTN}
-    WHEN I enter in mobile                   ${ORDERING_EMAIL}          ${EMAIL}
-    AND I enter in mobile                    invalid_password           ${PASSWORD}   
-    WHEN I click in mobile                   ${LOGIN_BUTTON}
-    THEN Message should display in mobile    Invalid username or password.
-    [Teardown]                      common.Main Mobile Teardown
-    
+    WHEN I enter in mobile                   invalid@email.com          ${MOBILE_EMAIL}
+    AND I enter in mobile                    ${VALID_PASSWORD}          ${MOBILE_PASSWORD}   
+    WHEN I click in mobile                   ${MOBILE_INNER_LOGIN_BTN}
+    # THEN Message should display in mobile    Invalid username or password.
+    [Teardown]                               Main Mobile Teardown

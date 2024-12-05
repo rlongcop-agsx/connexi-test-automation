@@ -1,6 +1,7 @@
 *** Settings ***
 Resource       ../variables/mobileLocators.robot
 Library        AppiumLibrary
+Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Screenshot
 
@@ -25,14 +26,14 @@ Main Mobile Teardown
     AppiumLibrary.Capture Page Screenshot
     AppiumLibrary.Close All Applications
 
-# Main Web Setup
-#     [Documentation]        This is the main setup for the connexi
-#     [Arguments]            ${BROWSER}
-#     Empty Directory                 reports/screenshots
-#     Set Screenshot Directory        reports/screenshots
-#     Open Browser           about:blank    ${BROWSER}
+Main Web Setup
+    [Documentation]        This is the main setup for the connexi
+    [Arguments]            ${BROWSER}
+    Empty Directory                 reports/screenshots
+    Set Screenshot Directory        reports/screenshots
+    Open Browser           about:blank    ${BROWSER}
 
-# Main Web Teardown
-#     [Documentation]        This is the main teardown for the web app
-#     SeleniumLibrary.Capture Page Screenshot
-#     Close All Browsers
+Main Web Teardown
+    [Documentation]        This is the main teardown for the web app
+    SeleniumLibrary.Capture Page Screenshot
+    Close All Browsers
