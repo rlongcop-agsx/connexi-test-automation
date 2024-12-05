@@ -9,11 +9,34 @@ on:
 
 jobs:
   run_automation_test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+
+    - name: Install Android SDK
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y openjdk-11-jdk wget unzip
+        wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip
+        mkdir -p $ANDROID_HOME/cmdline-tools
+        unzip cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools
+        mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "system-images;android-30;google_apis;x86_64" "emulator"
+
+    - name: Create and Start Emulator
+      run: |
+        $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
+        nohup $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-boot-anim -no-window -gpu off -writable-system &
+        adb wait-for-device
+        adb shell input keyevent 82
 
     - name: Set up Python
       uses: actions/setup-python@v2
