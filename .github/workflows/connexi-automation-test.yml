@@ -9,7 +9,7 @@ on:
 
 jobs:
   run_automation_test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout repository
@@ -24,11 +24,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
     - name: Run Webdriver Manager
       run: |
         python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
-
     - name: Run Robot Framework tests
       shell: bash
       run: |
@@ -46,7 +44,6 @@ jobs:
         -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
         -i web \
         test-scenarios
-
     - name: Archive test report
       if: always()
       uses: actions/upload-artifact@v4
