@@ -1,274 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2024-12-05T10:48:32.995288" rpa="false" schemaversion="5">
-<suite id="s1" name="TS-SIT-001" source="/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/test-scenarios/TS-SIT-001.robot">
-<test id="s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="25">
+<robot generator="Robot 7.1.1 (Python 3.12.7 on linux)" generated="2024-12-06T02:23:18.223873" rpa="false" schemaversion="5">
+<suite id="s1" name="Test-Scenarios" source="/home/runner/work/connexi-test-automation/connexi-test-automation/test-scenarios">
+<suite id="s1-s1" name="TS-SIT-001" source="/home/runner/work/connexi-test-automation/connexi-test-automation/test-scenarios/TS-SIT-001.robot">
+<test id="s1-s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="25">
 <kw name="Main Web Setup" owner="common" type="SETUP">
-<kw name="Set Log Level" owner="BuiltIn">
-<arg>ERROR</arg>
-<doc>Sets the log threshold to the specified level.</doc>
-<status status="PASS" start="2024-12-05T10:48:33.114151" elapsed="0.000146"/>
-</kw>
 <kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-06T02:23:18.488563" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots"&gt;/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-06T02:23:18.488785" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots"&gt;/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots&lt;/a&gt;'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-05T10:48:33.114382" elapsed="0.000463"/>
+<status status="PASS" start="2024-12-06T02:23:18.488400" elapsed="0.000454"/>
 </kw>
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<msg time="2024-12-06T02:23:18.488998" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-05T10:48:33.114950" elapsed="0.000244"/>
+<status status="PASS" start="2024-12-06T02:23:18.489042" elapsed="0.000292"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T02:23:18.489684" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<msg time="2024-12-06T02:23:23.920939" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-12-06T02:23:23.921140" level="FAIL">SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55a3573c195e &lt;unknown&gt;
+#1 0x55a356e76b76 &lt;unknown&gt;
+#2 0x55a356eb0b02 &lt;unknown&gt;
+#3 0x55a356ea9f45 &lt;unknown&gt;
+#4 0x55a356ef54f2 &lt;unknown&gt;
+#5 0x55a356ef473f &lt;unknown&gt;
+#6 0x55a356ee7f83 &lt;unknown&gt;
+#7 0x55a356eb801e &lt;unknown&gt;
+#8 0x55a356eb8cfe &lt;unknown&gt;
+#9 0x55a3573969f1 &lt;unknown&gt;
+#10 0x55a357399bee &lt;unknown&gt;
+#11 0x55a35739966b &lt;unknown&gt;
+#12 0x55a35739a015 &lt;unknown&gt;
+#13 0x55a357388402 &lt;unknown&gt;
+#14 0x55a35739a39d &lt;unknown&gt;
+#15 0x55a3573725c5 &lt;unknown&gt;
+#16 0x55a3573b2018 &lt;unknown&gt;
+#17 0x55a3573b222f &lt;unknown&gt;
+#18 0x55a3573c054c &lt;unknown&gt;
+#19 0x7efe1a494ac3 &lt;unknown&gt;
+</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-05T10:48:33.115352" elapsed="2.022913"/>
+<status status="FAIL" start="2024-12-06T02:23:18.489506" elapsed="5.433927">SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55a3573c195e &lt;unknown&gt;
+#1 0x55a356e76b76 &lt;unknown&gt;
+#2 0x55a356eb0b02 &lt;unknown&gt;
+#3 0x55a356ea9f45 &lt;unknown&gt;
+#4 0x55a356ef54f2 &lt;unknown&gt;
+#5 0x55a356ef473f &lt;unknown&gt;
+#6 0x55a356ee7f83 &lt;unknown&gt;
+#7 0x55a356eb801e &lt;unknown&gt;
+#8 0x55a356eb8cfe &lt;unknown&gt;
+#9 0x55a3573969f1 &lt;unknown&gt;
+#10 0x55a357399bee &lt;unknown&gt;
+#11 0x55a35739966b &lt;unknown&gt;
+#12 0x55a35739a015 &lt;unknown&gt;
+#13 0x55a357388402 &lt;unknown&gt;
+#14 0x55a35739a39d &lt;unknown&gt;
+#15 0x55a3573725c5 &lt;unknown&gt;
+#16 0x55a3573b2018 &lt;unknown&gt;
+#17 0x55a3573b222f &lt;unknown&gt;
+#18 0x55a3573c054c &lt;unknown&gt;
+#19 0x7efe1a494ac3 &lt;unknown&gt;
+</status>
 </kw>
 <arg>${BROWSER}</arg>
 <doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-05T10:48:33.113579" elapsed="2.024999"/>
-</kw>
-<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
-<kw name="Navigate to login page" owner="web_login">
-<kw name="Go To" owner="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-05T10:48:35.139953" elapsed="2.746798"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2024-12-05T10:48:35.139774" elapsed="2.747143"/>
-</kw>
-<kw name="Verify Page Loaded" owner="web_login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-05T10:48:37.887346" elapsed="0.018889"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:37.887102" elapsed="0.019203"/>
-</kw>
-<arg>${BASE_URL}</arg>
-<arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-05T10:48:35.139355" elapsed="2.766984"/>
-</kw>
-<kw name="WHEN I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T10:48:37.906807" elapsed="0.118669"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:37.906676" elapsed="0.118878"/>
-</kw>
-<arg>invalid@email.com</arg>
-<arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-05T10:48:37.906492" elapsed="0.119098"/>
-</kw>
-<kw name="AND I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T10:48:38.026244" elapsed="0.040039"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:38.026074" elapsed="0.040285"/>
-</kw>
-<arg>${VALID_PASSWORD}</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-05T10:48:38.025795" elapsed="0.040596"/>
-</kw>
-<kw name="WHEN I click in web" owner="kadenaWebApp">
-<kw name="Click login" owner="web_login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T10:48:38.066914" elapsed="0.792356"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:38.066783" elapsed="0.792606"/>
-</kw>
-<arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-05T10:48:38.066589" elapsed="0.792858"/>
-</kw>
-<kw name="THEN Message should display in web" owner="kadenaWebApp">
-<kw name="Validate Error Message" owner="web_login">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>${text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-12-05T10:48:38.860271" elapsed="0.010790"/>
-</kw>
-<arg>${text}</arg>
-<status status="PASS" start="2024-12-05T10:48:38.860013" elapsed="0.011140"/>
-</kw>
-<arg>Invalid username or password.</arg>
-<status status="PASS" start="2024-12-05T10:48:38.859706" elapsed="0.011492"/>
+<status status="FAIL" start="2024-12-06T02:23:18.487348" elapsed="5.436289">SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55a3573c195e &lt;unknown&gt;
+#1 0x55a356e76b76 &lt;unknown&gt;
+#2 0x55a356eb0b02 &lt;unknown&gt;
+#3 0x55a356ea9f45 &lt;unknown&gt;
+#4 0x55a356ef54f2 &lt;unknown&gt;
+#5 0x55a356ef473f &lt;unknown&gt;
+#6 0x55a356ee7f83 &lt;unknown&gt;
+#7 0x55a356eb801e &lt;unknown&gt;
+#8 0x55a356eb8cfe &lt;unknown&gt;
+#9 0x55a3573969f1 &lt;unknown&gt;
+#10 0x55a357399bee &lt;unknown&gt;
+#11 0x55a35739966b &lt;unknown&gt;
+#12 0x55a35739a015 &lt;unknown&gt;
+#13 0x55a357388402 &lt;unknown&gt;
+#14 0x55a35739a39d &lt;unknown&gt;
+#15 0x55a3573725c5 &lt;unknown&gt;
+#16 0x55a3573b2018 &lt;unknown&gt;
+#17 0x55a3573b222f &lt;unknown&gt;
+#18 0x55a3573c054c &lt;unknown&gt;
+#19 0x7efe1a494ac3 &lt;unknown&gt;
+</status>
 </kw>
 <kw name="Main Web Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T02:23:23.924420" level="INFO">Cannot capture screenshot because no browser is open.</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-05T10:48:38.871712" elapsed="0.172441"/>
+<status status="PASS" start="2024-12-06T02:23:23.924318" elapsed="0.000157"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-05T10:48:39.044354" elapsed="0.077967"/>
+<status status="PASS" start="2024-12-06T02:23:23.924603" elapsed="0.000111"/>
 </kw>
 <doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-05T10:48:38.871500" elapsed="0.250894"/>
+<status status="PASS" start="2024-12-06T02:23:23.924004" elapsed="0.000774"/>
 </kw>
 <doc>Login with invalid email</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>WEB</tag>
-<status status="PASS" start="2024-12-05T10:48:33.113031" elapsed="6.009432"/>
+<status status="FAIL" start="2024-12-06T02:23:18.486453" elapsed="5.438376">Setup failed:
+SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55a3573c195e &lt;unknown&gt;
+#1 0x55a356e76b76 &lt;unknown&gt;
+#2 0x55a356eb0b02 &lt;unknown&gt;
+#3 0x55a356ea9f45 &lt;unknown&gt;
+#4 0x55a356ef54f2 &lt;unknown&gt;
+#5 0x55a356ef473f &lt;unknown&gt;
+#6 0x55a356ee7f83 &lt;unknown&gt;
+#7 0x55a356eb801e &lt;unknown&gt;
+#8 0x55a356eb8cfe &lt;unknown&gt;
+#9 0x55a3573969f1 &lt;unknown&gt;
+#10 0x55a357399bee &lt;unknown&gt;
+#11 0x55a35739966b &lt;unknown&gt;
+#12 0x55a35739a015 &lt;unknown&gt;
+#13 0x55a357388402 &lt;unknown&gt;
+#14 0x55a35739a39d &lt;unknown&gt;
+#15 0x55a3573725c5 &lt;unknown&gt;
+#16 0x55a3573b2018 &lt;unknown&gt;
+#17 0x55a3573b222f &lt;unknown&gt;
+#18 0x55a3573c054c &lt;unknown&gt;
+#19 0x7efe1a494ac3 &lt;unknown&gt;
+</status>
 </test>
-<test id="s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="35">
+<test id="s1-s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="35">
 <kw name="Main Web Setup" owner="common" type="SETUP">
-<kw name="Set Log Level" owner="BuiltIn">
-<arg>ERROR</arg>
-<doc>Sets the log threshold to the specified level.</doc>
-<status status="PASS" start="2024-12-05T10:48:39.123147" elapsed="0.000157"/>
-</kw>
 <kw name="Empty Directory" owner="OperatingSystem">
+<msg time="2024-12-06T02:23:23.926930" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots"&gt;/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-06T02:23:23.927073" level="INFO" html="true">Emptied directory '&lt;a href="file:///home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots"&gt;/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots&lt;/a&gt;'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-05T10:48:39.123363" elapsed="0.000302"/>
+<status status="PASS" start="2024-12-06T02:23:23.926756" elapsed="0.000402"/>
 </kw>
 <kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<msg time="2024-12-06T02:23:23.927370" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
 <arg>reports/screenshots</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-05T10:48:39.123750" elapsed="0.000142"/>
+<status status="PASS" start="2024-12-06T02:23:23.927425" elapsed="0.000335"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T02:23:23.928192" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
+<msg time="2024-12-06T02:23:24.621101" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-12-06T02:23:24.621302" level="FAIL">SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55cebecf095e &lt;unknown&gt;
+#1 0x55cebe7a5b76 &lt;unknown&gt;
+#2 0x55cebe7dfb02 &lt;unknown&gt;
+#3 0x55cebe7d8f45 &lt;unknown&gt;
+#4 0x55cebe8244f2 &lt;unknown&gt;
+#5 0x55cebe82373f &lt;unknown&gt;
+#6 0x55cebe816f83 &lt;unknown&gt;
+#7 0x55cebe7e701e &lt;unknown&gt;
+#8 0x55cebe7e7cfe &lt;unknown&gt;
+#9 0x55cebecc59f1 &lt;unknown&gt;
+#10 0x55cebecc8bee &lt;unknown&gt;
+#11 0x55cebecc866b &lt;unknown&gt;
+#12 0x55cebecc9015 &lt;unknown&gt;
+#13 0x55cebecb7402 &lt;unknown&gt;
+#14 0x55cebecc939d &lt;unknown&gt;
+#15 0x55cebeca15c5 &lt;unknown&gt;
+#16 0x55cebece1018 &lt;unknown&gt;
+#17 0x55cebece122f &lt;unknown&gt;
+#18 0x55cebecef54c &lt;unknown&gt;
+#19 0x7f7df3294ac3 &lt;unknown&gt;
+</msg>
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-05T10:48:39.123969" elapsed="1.333031"/>
+<status status="FAIL" start="2024-12-06T02:23:23.927986" elapsed="0.694340">SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55cebecf095e &lt;unknown&gt;
+#1 0x55cebe7a5b76 &lt;unknown&gt;
+#2 0x55cebe7dfb02 &lt;unknown&gt;
+#3 0x55cebe7d8f45 &lt;unknown&gt;
+#4 0x55cebe8244f2 &lt;unknown&gt;
+#5 0x55cebe82373f &lt;unknown&gt;
+#6 0x55cebe816f83 &lt;unknown&gt;
+#7 0x55cebe7e701e &lt;unknown&gt;
+#8 0x55cebe7e7cfe &lt;unknown&gt;
+#9 0x55cebecc59f1 &lt;unknown&gt;
+#10 0x55cebecc8bee &lt;unknown&gt;
+#11 0x55cebecc866b &lt;unknown&gt;
+#12 0x55cebecc9015 &lt;unknown&gt;
+#13 0x55cebecb7402 &lt;unknown&gt;
+#14 0x55cebecc939d &lt;unknown&gt;
+#15 0x55cebeca15c5 &lt;unknown&gt;
+#16 0x55cebece1018 &lt;unknown&gt;
+#17 0x55cebece122f &lt;unknown&gt;
+#18 0x55cebecef54c &lt;unknown&gt;
+#19 0x7f7df3294ac3 &lt;unknown&gt;
+</status>
 </kw>
 <arg>${BROWSER}</arg>
 <doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-05T10:48:39.122979" elapsed="1.334374"/>
-</kw>
-<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
-<kw name="Navigate to login page" owner="web_login">
-<kw name="Go To" owner="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-05T10:48:40.458238" elapsed="2.548841"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2024-12-05T10:48:40.458085" elapsed="2.549159"/>
-</kw>
-<kw name="Verify Page Loaded" owner="web_login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-05T10:48:43.007753" elapsed="0.008565"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.007463" elapsed="0.008941"/>
-</kw>
-<arg>${BASE_URL}</arg>
-<arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-05T10:48:40.457763" elapsed="2.558677"/>
-</kw>
-<kw name="WHEN I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T10:48:43.017109" elapsed="0.109029"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.016926" elapsed="0.109285"/>
-</kw>
-<arg>${ORDERING_EMAIL}</arg>
-<arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.016660" elapsed="0.109678"/>
-</kw>
-<kw name="AND I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T10:48:43.126998" elapsed="0.040838"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.126851" elapsed="0.041056"/>
-</kw>
-<arg>invalid_password</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.126638" elapsed="0.041300"/>
-</kw>
-<kw name="WHEN I click in web" owner="kadenaWebApp">
-<kw name="Click login" owner="web_login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-05T10:48:43.168448" elapsed="0.805078"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.168312" elapsed="0.805329"/>
-</kw>
-<arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.168131" elapsed="0.805555"/>
-</kw>
-<kw name="THEN Message should display in web" owner="kadenaWebApp">
-<kw name="Validate Error Message" owner="web_login">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>${text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-12-05T10:48:43.974328" elapsed="0.011780"/>
-</kw>
-<arg>${text}</arg>
-<status status="PASS" start="2024-12-05T10:48:43.974127" elapsed="0.012085"/>
-</kw>
-<arg>Invalid username or password.</arg>
-<status status="PASS" start="2024-12-05T10:48:43.973888" elapsed="0.012371"/>
+<status status="FAIL" start="2024-12-06T02:23:23.926317" elapsed="0.696228">SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55cebecf095e &lt;unknown&gt;
+#1 0x55cebe7a5b76 &lt;unknown&gt;
+#2 0x55cebe7dfb02 &lt;unknown&gt;
+#3 0x55cebe7d8f45 &lt;unknown&gt;
+#4 0x55cebe8244f2 &lt;unknown&gt;
+#5 0x55cebe82373f &lt;unknown&gt;
+#6 0x55cebe816f83 &lt;unknown&gt;
+#7 0x55cebe7e701e &lt;unknown&gt;
+#8 0x55cebe7e7cfe &lt;unknown&gt;
+#9 0x55cebecc59f1 &lt;unknown&gt;
+#10 0x55cebecc8bee &lt;unknown&gt;
+#11 0x55cebecc866b &lt;unknown&gt;
+#12 0x55cebecc9015 &lt;unknown&gt;
+#13 0x55cebecb7402 &lt;unknown&gt;
+#14 0x55cebecc939d &lt;unknown&gt;
+#15 0x55cebeca15c5 &lt;unknown&gt;
+#16 0x55cebece1018 &lt;unknown&gt;
+#17 0x55cebece122f &lt;unknown&gt;
+#18 0x55cebecef54c &lt;unknown&gt;
+#19 0x7f7df3294ac3 &lt;unknown&gt;
+</status>
 </kw>
 <kw name="Main Web Teardown" owner="common" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T02:23:24.623469" level="INFO">Cannot capture screenshot because no browser is open.</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-05T10:48:43.986900" elapsed="0.166110"/>
+<status status="PASS" start="2024-12-06T02:23:24.623344" elapsed="0.000178"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-05T10:48:44.153141" elapsed="0.104044"/>
+<status status="PASS" start="2024-12-06T02:23:24.623673" elapsed="0.000132"/>
 </kw>
 <doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-05T10:48:43.986598" elapsed="0.270658"/>
+<status status="PASS" start="2024-12-06T02:23:24.622971" elapsed="0.000898"/>
 </kw>
 <doc>Login with invalid password</doc>
 <tag>M0MAIN-SIT-001</tag>
 <tag>WEB</tag>
-<status status="PASS" start="2024-12-05T10:48:39.122661" elapsed="5.134655"/>
+<status status="FAIL" start="2024-12-06T02:23:23.925607" elapsed="0.698317">Setup failed:
+SessionNotCreatedException: Message: session not created: Microsoft Edge failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from msedge location /usr/bin/microsoft-edge is no longer running, so msedgedriver is assuming that msedge has crashed.)
+Stacktrace:
+#0 0x55cebecf095e &lt;unknown&gt;
+#1 0x55cebe7a5b76 &lt;unknown&gt;
+#2 0x55cebe7dfb02 &lt;unknown&gt;
+#3 0x55cebe7d8f45 &lt;unknown&gt;
+#4 0x55cebe8244f2 &lt;unknown&gt;
+#5 0x55cebe82373f &lt;unknown&gt;
+#6 0x55cebe816f83 &lt;unknown&gt;
+#7 0x55cebe7e701e &lt;unknown&gt;
+#8 0x55cebe7e7cfe &lt;unknown&gt;
+#9 0x55cebecc59f1 &lt;unknown&gt;
+#10 0x55cebecc8bee &lt;unknown&gt;
+#11 0x55cebecc866b &lt;unknown&gt;
+#12 0x55cebecc9015 &lt;unknown&gt;
+#13 0x55cebecb7402 &lt;unknown&gt;
+#14 0x55cebecc939d &lt;unknown&gt;
+#15 0x55cebeca15c5 &lt;unknown&gt;
+#16 0x55cebece1018 &lt;unknown&gt;
+#17 0x55cebece122f &lt;unknown&gt;
+#18 0x55cebecef54c &lt;unknown&gt;
+#19 0x7f7df3294ac3 &lt;unknown&gt;
+</status>
 </test>
 <doc>Login with invalid and valid credentials</doc>
-<status status="PASS" start="2024-12-05T10:48:32.995861" elapsed="11.261884"/>
+<status status="FAIL" start="2024-12-06T02:23:18.262601" elapsed="6.361961"/>
+</suite>
+<status status="FAIL" start="2024-12-06T02:23:18.227020" elapsed="6.398415"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">M0MAIN-SIT-001</stat>
-<stat pass="2" fail="0" skip="0">WEB</stat>
+<stat pass="0" fail="2" skip="0">M0MAIN-SIT-001</stat>
+<stat pass="0" fail="2" skip="0">WEB</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TS-SIT-001">TS-SIT-001</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-12-05T10:48:33.107146" level="WARN">Imported resource file '/Users/redenlongcop/Documents/CONNEXI_AUTOMATION/resources/PO_mobile/mobile_home.robot' is empty.</msg>
-<msg time="2024-12-05T10:48:33.114925" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
-<msg time="2024-12-05T10:48:39.123728" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<msg time="2024-12-06T02:23:18.475522" level="WARN">Imported resource file '/home/runner/work/connexi-test-automation/connexi-test-automation/resources/PO_mobile/mobile_home.robot' is empty.</msg>
+<msg time="2024-12-06T02:23:18.485354" level="ERROR">Error in file '/home/runner/work/connexi-test-automation/connexi-test-automation/variables/publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-12-06T02:23:18.488998" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<msg time="2024-12-06T02:23:23.927370" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
 </errors>
 </robot>
