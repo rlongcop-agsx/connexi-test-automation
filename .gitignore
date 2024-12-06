@@ -1,2 +1,3 @@
 reports/*.txt
 variables/privateCredentials.robot
+.github/workflows/draft.yml

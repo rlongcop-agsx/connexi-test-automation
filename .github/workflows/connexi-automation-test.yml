@@ -15,45 +15,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Java
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-
-    - name: Install Android SDK
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y openjdk-11-jdk wget unzip
-        wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip
-        mkdir -p $ANDROID_HOME/cmdline-tools
-        unzip cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools
-        mv $ANDROID_HOME/cmdline-tools/cmdline-tools $ANDROID_HOME/cmdline-tools/latest
-        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
-        $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-30" "system-images;android-30;google_apis;arm64-v8a" "emulator"
-
-    - name: Add Android SDK to PATH
-      run: echo "${ANDROID_HOME}/platform-tools" >> $GITHUB_PATH
-
-    - name: Set up emulator
-      run: |
-        $ANDROID_HOME/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
-        $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-boot-anim -no-window -gpu off -no-accel -no-snapshot -writable-system -verbose &
-        boot_completed=""
-        timeout=0
-        while [ "$boot_completed" != "1" ] && [ $timeout -lt 300 ]; do
-            sleep 5
-            boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
-            timeout=$((timeout + 5))
-        done
-        if [ "$boot_completed" != "1" ]; then
-            echo "Emulator failed to boot within the timeout period."
-            exit 1
-        fi
-        echo "Emulator booted successfully."
-    
-    
-
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
