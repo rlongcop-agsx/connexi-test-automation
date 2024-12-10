@@ -1,19 +1,15 @@
-# Save this as Dockerfile in your project directory
-FROM budtmo/docker-android-x86-8.1
+# Use the Docker-Android image as the base
+FROM budtmo/docker-android:emulator_11.0
 
 # Install Maven
 RUN apt-get update && \
     apt-get install -y maven
 
-# Copy the APK file
-COPY sample_apk/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk /app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk
+# Copy the APK file (adjust the path if needed)
+COPY app/TEST-ef1d159d-63bf-4e8a-93ce-d5d75b4d6ace.apk /app/TEST-ef1d159d-63bf-4e8a-93ce-d5d75b4d6ace.apk
 
-# Copy source files and pom.xml
-COPY src /app/src
-COPY pom.xml /app/pom.xml
-
-# Expose necessary ports
-EXPOSE 6080 4723 5554 5555
+# Expose only the Appium port (since you won't need the VNC or emulator ports)
+EXPOSE 4723
 
 # Set environment variables
 ENV DEVICE="Samsung Galaxy S6" \
