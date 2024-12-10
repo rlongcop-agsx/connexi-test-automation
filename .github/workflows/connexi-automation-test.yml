@@ -15,8 +15,24 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Docker
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install Node.js (for Appium)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Appium
       run: |
+        npm install -g appium
+        appium --version
+
+    - name: Install Docker
+      run: |
+        sudo apt-get remove --purge containerd
         sudo apt-get update
         sudo apt-get install -y docker.io
         sudo systemctl start docker
@@ -28,19 +44,44 @@ jobs:
 
     - name: Run Docker Container
       run: |
-        docker run --privileged -d -p 6080:6080 -p 4723:4723 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name my-appium-container my-appium-image
+        docker run --privileged -d -p 6080:6080 -p 4723:4723 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name appium-container my-appium-image
 
-    - name: Install APK on Emulator
+    - name: Install WebDriver Manager
       run: |
-        docker exec -it my-appium-container adb install /app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk
+        python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
 
-    - name: Run Maven Tests
+    - name: Start Appium Server
       run: |
-        docker exec -it my-appium-container mvn test
+        appium --log-level error &
 
-    - name: Stop Docker Container
+    - name: Wait for Emulator to Boot
       run: |
-        docker stop my-appium-container
+        adb wait-for-device
+        boot_completed=""
+        while [ -z "$boot_completed" ]; do
+          boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+          echo "Waiting for emulator to boot..."
+          sleep 5
+        done
+        echo "Emulator boot completed!"
+
+    - name: Run Robot Framework tests
+      shell: bash
+      run: |
+        robot -d reports \
+        -v BASE_URL:${{ secrets.BASE_URL }} \
+        -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
+        -v ANALYTICS_EMAIL:${{ secrets.ANALYTICS_EMAIL }} \
+        -v FORECASTING_EMAIL:${{ secrets.FORECASTING_EMAIL }} \
+        -v INVENTORY_EMAIL:${{ secrets.INVENTORY_EMAIL }} \
+        -v ORDERING_EMAIL:${{ secrets.ORDERING_EMAIL }} \
+        -v PROCUREMENTSP_EMAIL:${{ secrets.PROCUREMENTSP_EMAIL }} \
+        -v PROCUREMENT_EMAIL:${{ secrets.PROCUREMENT_EMAIL }} \
+        -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
+        -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
+        -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
+        -i mobile \
+        test-scenarios
 
     - name: Archive test report
       if: always()
