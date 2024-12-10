@@ -54,12 +54,18 @@ jobs:
     - name: Create and Start Android Emulator
       run: |
         $HOME/android-sdk/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
-        $HOME/android-sdk/emulator/emulator -avd test -no-window -no-audio -no-snapshot -gpu off &
+        $HOME/android-sdk/emulator/emulator -avd test -no-audio -no-window -gpu swiftshader_indirect -verbose &
 
     - name: Wait for Emulator to Boot
       run: |
         adb wait-for-device
-        adb shell input keyevent 82
+        boot_completed=""
+        while [ -z "$boot_completed" ]; do
+          boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
+          echo "Waiting for emulator to boot..."
+          sleep 5
+        done
+        echo "Emulator boot completed!"
 
     - name: Install WebDriver Manager
       run: |
