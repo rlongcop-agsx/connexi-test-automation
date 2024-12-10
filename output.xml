@@ -1,289 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.7 on win32)" generated="2024-12-06T02:25:24.044554" rpa="false" schemaversion="5">
-<suite id="s1" name="Test-Scenarios" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios">
-<suite id="s1-s1" name="TS-SIT-001" source="D:\a\connexi-test-automation\connexi-test-automation\test-scenarios\TS-SIT-001.robot">
-<test id="s1-s1-t1" name="Test Case 1: Login with invalid email on the web custom app" line="25">
-<kw name="Main Web Setup" owner="common" type="SETUP">
+<robot generator="Robot 7.1.1 (Python 3.12.7 on linux)" generated="2024-12-10T00:31:16.104016" rpa="false" schemaversion="5">
+<suite id="s1" name="TS-SIT-001" source="/home/runner/work/connexi-test-automation/connexi-test-automation/tests/TS-SIT-001.robot">
+<test id="s1-t1" name="Test Case 3: Login with invalid email on the mobile custom app" line="45">
+<kw name="Main Mobile Setup" owner="common" type="SETUP">
 <kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-06T02:25:24.310827" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-06T02:25:24.310827" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-10T00:31:16.320647" level="INFO" html="true">Listing contents of directory '&lt;a href="file:///home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots"&gt;/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots&lt;/a&gt;'.</msg>
+<msg time="2024-12-10T00:31:16.320783" level="FAIL">Directory '/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots' does not exist.</msg>
 <arg>reports/screenshots</arg>
 <doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-06T02:25:24.310827" elapsed="0.015628"/>
+<status status="FAIL" start="2024-12-10T00:31:16.320508" elapsed="0.000433">Directory '/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots' does not exist.</status>
 </kw>
-<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:25:24.326455" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<kw name="Set Screenshot Directory" owner="Screenshot">
 <arg>reports/screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-06T02:25:24.326455" elapsed="0.000000"/>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="NOT RUN" start="2024-12-10T00:31:16.321111" elapsed="0.000031"/>
 </kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:25:24.326455" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-06T02:25:24.326455" elapsed="38.538861"/>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${APPIUM_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>uiautomator2ServerInstallTimeout=${UIAUTOMATOR_TIMEOUT}</arg>
+<arg>enableAutoDownload = true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="NOT RUN" start="2024-12-10T00:31:16.321273" elapsed="0.000027"/>
 </kw>
-<arg>${BROWSER}</arg>
-<doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-06T02:25:24.310827" elapsed="38.554489"/>
+<doc>This is the main setup for the kadena mobile app</doc>
+<status status="FAIL" start="2024-12-10T00:31:16.319635" elapsed="0.001802">Directory '/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots' does not exist.</status>
 </kw>
-<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
-<kw name="Navigate to login page" owner="web_login">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:02.867123" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-06T02:26:02.867123" elapsed="2.140353"/>
+<kw name="Main Mobile Teardown" owner="common" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot">
+<msg time="2024-12-10T00:31:16.322242" level="FAIL">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<status status="FAIL" start="2024-12-10T00:31:16.322203" elapsed="0.000079">Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</status>
 </kw>
-<arg>${url}</arg>
-<status status="PASS" start="2024-12-06T02:26:02.865316" elapsed="2.142160"/>
+<msg time="2024-12-10T00:31:16.324119" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
+<msg time="2024-12-10T00:31:16.324302" level="FAIL">No application is open</msg>
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2024-12-10T00:31:16.321941" elapsed="0.003288">No application is open</status>
 </kw>
-<kw name="Verify Page Loaded" owner="web_login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-06T02:26:05.008475" elapsed="0.098209"/>
+<kw name="Close All Applications" owner="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" start="2024-12-10T00:31:16.325377" elapsed="0.001821"/>
 </kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.007476" elapsed="0.099208"/>
-</kw>
-<arg>${BASE_URL}</arg>
-<arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-06T02:26:02.865316" elapsed="2.241368"/>
-</kw>
-<kw name="WHEN I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:05.106684" level="INFO">Typing text 'invalid@email.com' into text field 'name=username'.</msg>
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-06T02:26:05.106684" elapsed="0.223672"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.106684" elapsed="0.223672"/>
-</kw>
-<arg>invalid@email.com</arg>
-<arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.106684" elapsed="0.223672"/>
-</kw>
-<kw name="AND I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:05.332349" level="INFO">Typing text 'password' into text field 'name=password'.</msg>
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-06T02:26:05.332349" elapsed="0.095198"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.331348" elapsed="0.096199"/>
-</kw>
-<arg>${VALID_PASSWORD}</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.331348" elapsed="0.096199"/>
-</kw>
-<kw name="WHEN I click in web" owner="kadenaWebApp">
-<kw name="Click login" owner="web_login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:05.428546" level="INFO">Clicking element 'name=login'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-06T02:26:05.428546" elapsed="1.514278"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.428546" elapsed="1.514278"/>
-</kw>
-<arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-06T02:26:05.428546" elapsed="1.514278"/>
-</kw>
-<kw name="THEN Message should display in web" owner="kadenaWebApp">
-<kw name="Validate Error Message" owner="web_login">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:06.959688" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
-<arg>${text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-12-06T02:26:06.943838" elapsed="0.015850"/>
-</kw>
-<arg>${text}</arg>
-<status status="PASS" start="2024-12-06T02:26:06.943838" elapsed="0.015850"/>
-</kw>
-<arg>Invalid username or password.</arg>
-<status status="PASS" start="2024-12-06T02:26:06.943838" elapsed="0.015850"/>
-</kw>
-<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:07.016520" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-06T02:26:06.960685" elapsed="0.056831"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-06T02:26:07.017516" elapsed="6.234733"/>
-</kw>
-<doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-06T02:26:06.959688" elapsed="6.292561"/>
+<doc>This is the main teardown for the mobile app</doc>
+<status status="FAIL" start="2024-12-10T00:31:16.321685" elapsed="0.005673">No application is open</status>
 </kw>
 <doc>Login with invalid email</doc>
-<tag>M0MAIN-SIT-001</tag>
-<tag>WEB</tag>
-<status status="PASS" start="2024-12-06T02:25:24.310827" elapsed="48.941422"/>
-</test>
-<test id="s1-s1-t2" name="Test Case 2: Login with invalid password on the web custom app" line="35">
-<kw name="Main Web Setup" owner="common" type="SETUP">
-<kw name="Empty Directory" owner="OperatingSystem">
-<msg time="2024-12-06T02:26:13.252249" level="INFO" html="true">Listing contents of directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<msg time="2024-12-06T02:26:13.252249" level="INFO" html="true">Emptied directory '&lt;a href="file://D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots"&gt;D:\a\connexi-test-automation\connexi-test-automation\reports\screenshots&lt;/a&gt;'.</msg>
-<arg>reports/screenshots</arg>
-<doc>Deletes all the content from the given directory.</doc>
-<status status="PASS" start="2024-12-06T02:26:13.252249" elapsed="0.000000"/>
-</kw>
-<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:13.252249" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
-<arg>reports/screenshots</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" start="2024-12-06T02:26:13.252249" elapsed="0.000000"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:13.252249" level="INFO">Opening browser 'Edge' to base url 'about:blank'.</msg>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-12-06T02:26:13.252249" elapsed="1.395882"/>
-</kw>
-<arg>${BROWSER}</arg>
-<doc>This is the main setup for the connexi</doc>
-<status status="PASS" start="2024-12-06T02:26:13.252249" elapsed="1.396025"/>
-</kw>
-<kw name="GIVEN I go to web login page" owner="kadenaWebApp">
-<kw name="Navigate to login page" owner="web_login">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:14.649374" level="INFO">Opening url 'https://kadena.test.amihan.net'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-12-06T02:26:14.649374" elapsed="2.871859"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2024-12-06T02:26:14.648824" elapsed="2.872409"/>
-</kw>
-<kw name="Verify Page Loaded" owner="web_login">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-12-06T02:26:17.521233" elapsed="0.013260"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.521233" elapsed="0.013260"/>
-</kw>
-<arg>${BASE_URL}</arg>
-<arg>${LOGIN_HEADER}</arg>
-<status status="PASS" start="2024-12-06T02:26:14.648274" elapsed="2.887270"/>
-</kw>
-<kw name="WHEN I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:17.535544" level="INFO">Typing text 'test-order-receiver-3@example.com' into text field 'name=username'.</msg>
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-06T02:26:17.535544" elapsed="0.104857"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.535544" elapsed="0.105856"/>
-</kw>
-<arg>${ORDERING_EMAIL}</arg>
-<arg>${EMAIL}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.535544" elapsed="0.105856"/>
-</kw>
-<kw name="AND I enter in web" owner="kadenaWebApp">
-<kw name="Enter credential" owner="web_login">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:17.642401" level="INFO">Typing text 'invalid_password' into text field 'name=password'.</msg>
-<arg>${locator}</arg>
-<arg>${credential}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-06T02:26:17.642401" elapsed="0.087450"/>
-</kw>
-<arg>${credentials}</arg>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.642401" elapsed="0.087450"/>
-</kw>
-<arg>invalid_password</arg>
-<arg>${PASSWORD}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.641400" elapsed="0.088451"/>
-</kw>
-<kw name="WHEN I click in web" owner="kadenaWebApp">
-<kw name="Click login" owner="web_login">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:17.730852" level="INFO">Clicking element 'name=login'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-12-06T02:26:17.730852" elapsed="1.178426"/>
-</kw>
-<arg>${locator}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.730852" elapsed="1.178426"/>
-</kw>
-<arg>${LOGIN_BUTTON}</arg>
-<status status="PASS" start="2024-12-06T02:26:17.729851" elapsed="1.179427"/>
-</kw>
-<kw name="THEN Message should display in web" owner="kadenaWebApp">
-<kw name="Validate Error Message" owner="web_login">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:18.926947" level="INFO">Current page contains text 'Invalid username or password.'.</msg>
-<arg>${text}</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-12-06T02:26:18.910277" elapsed="0.017675"/>
-</kw>
-<arg>${text}</arg>
-<status status="PASS" start="2024-12-06T02:26:18.910277" elapsed="0.017675"/>
-</kw>
-<arg>Invalid username or password.</arg>
-<status status="PASS" start="2024-12-06T02:26:18.909278" elapsed="0.018674"/>
-</kw>
-<kw name="Main Web Teardown" owner="common" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-12-06T02:26:19.001219" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-12-06T02:26:18.927952" elapsed="0.074270"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-12-06T02:26:19.002222" elapsed="6.120948"/>
-</kw>
-<doc>This is the main teardown for the web app</doc>
-<status status="PASS" start="2024-12-06T02:26:18.927952" elapsed="6.195218"/>
-</kw>
-<doc>Login with invalid password</doc>
-<tag>M0MAIN-SIT-001</tag>
-<tag>WEB</tag>
-<status status="PASS" start="2024-12-06T02:26:13.252249" elapsed="11.870921"/>
+<tag>MOBILE</tag>
+<status status="FAIL" start="2024-12-10T00:31:16.318708" elapsed="0.008720">Setup failed:
+Directory '/home/runner/work/connexi-test-automation/connexi-test-automation/reports/screenshots' does not exist.
+
+Also teardown failed:
+No application is open</status>
 </test>
 <doc>Login with invalid and valid credentials</doc>
-<status status="PASS" start="2024-12-06T02:25:24.060179" elapsed="61.062991"/>
-</suite>
-<status status="PASS" start="2024-12-06T02:25:24.044554" elapsed="61.078616"/>
+<status status="FAIL" start="2024-12-10T00:31:16.104860" elapsed="0.223093"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">M0MAIN-SIT-001</stat>
-<stat pass="2" fail="0" skip="0">WEB</stat>
+<stat pass="0" fail="1" skip="0">MOBILE</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Test-Scenarios">Test-Scenarios</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1" name="TS-SIT-001">Test-Scenarios.TS-SIT-001</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TS-SIT-001">TS-SIT-001</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-12-06T02:25:24.310827" level="WARN">Imported resource file 'D:\a\connexi-test-automation\connexi-test-automation\resources\PO_mobile\mobile_home.robot' is empty.</msg>
-<msg time="2024-12-06T02:25:24.310827" level="ERROR">Error in file 'D:\a\connexi-test-automation\connexi-test-automation\variables\publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
-<msg time="2024-12-06T02:25:24.326455" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
-<msg time="2024-12-06T02:26:13.252249" level="WARN">Keyword 'Set Screenshot Directory' found both from a custom library 'SeleniumLibrary' and a standard library 'Screenshot'. The custom keyword is used. To select explicitly, and to get rid of this warning, use either 'SeleniumLibrary.Set Screenshot Directory' or 'Screenshot.Set Screenshot Directory'.</msg>
+<msg time="2024-12-10T00:31:16.316051" level="ERROR">Error in file '/home/runner/work/connexi-test-automation/connexi-test-automation/variables/publicCredentials.robot' on line 2: Resource file 'privateCredentials.robot' does not exist.</msg>
+<msg time="2024-12-10T00:31:16.317606" level="ERROR">Error in file '/home/runner/work/connexi-test-automation/connexi-test-automation/variables/publicCredentials.robot' on line 29: Setting variable '${Supply Planning_EMAIL}' failed: Variable '${SUPPLYPLAN}' not found. Did you mean:
+    ${SUPPLYPLAN_EMAIL}</msg>
+<msg time="2024-12-10T00:31:16.324119" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Multiple keywords with name 'Capture Page Screenshot' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Capture Page Screenshot
+    SeleniumLibrary.Capture Page Screenshot</msg>
 </errors>
 </robot>
