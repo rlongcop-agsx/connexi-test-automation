@@ -30,10 +30,11 @@ jobs:
         npm install -g appium
         appium --version
 
-    - name: Install Android SDK
+        - name: Install Android SDK
       run: |
         sudo apt-get update
         sudo apt-get install -y openjdk-11-jdk wget unzip
+        mkdir -p $HOME/android-sdk/cmdline-tools
         wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O android-commandlinetools.zip
         unzip android-commandlinetools.zip -d $HOME/android-sdk/cmdline-tools
         mv $HOME/android-sdk/cmdline-tools/cmdline-tools $HOME/android-sdk/cmdline-tools/latest
