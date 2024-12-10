@@ -15,76 +15,32 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.12'
-
-    - name: Install Node.js (for Appium)
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-
-    - name: Install Appium
-      run: |
-        npm install -g appium
-        appium --version
-
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
     - name: Set up Docker
       run: |
         sudo apt-get update
         sudo apt-get install -y docker.io
+        sudo systemctl start docker
+        sudo systemctl enable docker
 
-    - name: Start Android Emulator Using Docker
+    - name: Build Docker Image
       run: |
-        docker pull us-docker.pkg.dev/android-emulator-268719/images/emulator:30.0.26
-        docker run --rm -d \
-          --name android-emulator \
-          -e "ANDROID_SDK_ROOT=/opt/android-sdk" \
-          -e "ADB_INSTALL_TIMEOUT=120" \
-          -p 8554:8554 \
-          -p 5555:5555 \
-          us-docker.pkg.dev/android-emulator-268719/images/emulator:30.0.26 \
-          /bin/bash -c "emulator -avd Pixel_2_API_30 -no-window -gpu swiftshader_indirect -verbose"
+        docker build -t my-appium-image .
 
-    - name: Wait for Emulator to Boot
+    - name: Run Docker Container
       run: |
-        adb connect localhost:5555
-        adb wait-for-device
-        boot_completed=""
-        while [ -z "$boot_completed" ]; do
-          boot_completed=$(adb shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')
-          echo "Waiting for emulator to boot..."
-          sleep 5
-        done
-        echo "Emulator boot completed!"
+        docker run --privileged -d -p 6080:6080 -p 4723:4723 -p 5554:5554 -p 5555:5555 -e DEVICE="Samsung Galaxy S6" --name my-appium-container my-appium-image
 
-    - name: Start Appium Server
+    - name: Install APK on Emulator
       run: |
-        appium --log-level error &
+        docker exec -it my-appium-container adb install /app/Android.SauceLabs.Mobile.Sample.app.2.7.1.apk
 
-    - name: Run Robot Framework tests
-      shell: bash
+    - name: Run Maven Tests
       run: |
-        robot -d reports \
-        -v BASE_URL:${{ secrets.BASE_URL }} \
-        -v TABLEAU_URL:${{ secrets.TABLEAU_URL }} \
-        -v ANALYTICS_EMAIL:${{ secrets.ANALYTICS_EMAIL }} \
-        -v FORECASTING_EMAIL:${{ secrets.FORECASTING_EMAIL }} \
-        -v INVENTORY_EMAIL:${{ secrets.INVENTORY_EMAIL }} \
-        -v ORDERING_EMAIL:${{ secrets.ORDERING_EMAIL }} \
-        -v PROCUREMENTSP_EMAIL:${{ secrets.PROCUREMENTSP_EMAIL }} \
-        -v PROCUREMENT_EMAIL:${{ secrets.PROCUREMENT_EMAIL }} \
-        -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
-        -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
-        -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
-        -i mobile \
-        test-scenarios
+        docker exec -it my-appium-container mvn test
+
+    - name: Stop Docker Container
+      run: |
+        docker stop my-appium-container
 
     - name: Archive test report
       if: always()
