@@ -30,7 +30,7 @@ jobs:
         npm install -g appium
         appium --version
 
-        - name: Install Android SDK
+    - name: Install Android SDK
       run: |
         sudo apt-get update
         sudo apt-get install -y openjdk-11-jdk wget unzip
