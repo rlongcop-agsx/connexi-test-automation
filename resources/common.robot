@@ -5,6 +5,8 @@ Library        SeleniumLibrary
 Library        OperatingSystem
 Library        Screenshot
 
+*** Variables ***
+           
 
 *** Keywords ***
 Main Mobile Setup
@@ -30,8 +32,9 @@ Main Web Setup
     [Documentation]        This is the main setup for the connexi
     [Arguments]            ${BROWSER}
     Empty Directory                 reports/screenshots
-    Set Screenshot Directory        reports/screenshots
+    Screenshot.Set Screenshot Directory        reports/screenshots
     Open Browser           about:blank    ${BROWSER}
+    Maximize Browser Window
 
 Main Web Teardown
     [Documentation]        This is the main teardown for the web app

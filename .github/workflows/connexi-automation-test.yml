@@ -9,14 +9,14 @@ on:
 
 jobs:
   run_automation_test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.12'
 
@@ -24,9 +24,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Webdriver Manager
+
+    - name: Install WebDriver Manager
       run: |
         python -c "from webdriver_manager.microsoft import EdgeChromiumDriverManager; EdgeChromiumDriverManager().install()"
+
+    - name: Start Appium Server
+      run: appium --log-level error &
+
     - name: Run Robot Framework tests
       shell: bash
       run: |
@@ -42,8 +47,9 @@ jobs:
         -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
         -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
         -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
-        -i web \
-        test-scenarios
+        -i mobile \
+        tests/TS-SIT-001.robot
+
     - name: Archive test report
       if: always()
       uses: actions/upload-artifact@v4
@@ -58,7 +64,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Download test results artifact
       uses: actions/download-artifact@v4

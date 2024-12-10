@@ -4,6 +4,7 @@ Resource                               privateCredentials.robot
 *** Variables ***
 ${BROWSER}=                            Edge
 
+# URLs
 ${LOGIN_PAGE}=                         ${BASE_URL}
 
 ${PROCUREMENT_PAGE}=                   ${BASE_URL}/procurement
@@ -18,14 +19,14 @@ ${VENDOR_PAGE}=                        ${BASE_URL}/vendor
 ${INVENTORY_PAGE}=                     ${BASE_URL}/inventory
 ${QUALITY_PAGE}=                       ${BASE_URL}/quality
 
-${FORECAST_PAGE}=                      ${TABLEAU_URL}/#forecasting_dashboard
-${SUPPLYPLANNING_PAGE}=                ${TABLEAU_URL}/#supply_planning_dashboard
-${ANALYTICS_PAGE}=                     ${TABLEAU_URL}/#analytics_dashboard
+${FORECAST_PAGE}=                      ${TABLEAU_URL}/forecasting
+${SUPPLYPLANNING_PAGE}=                ${TABLEAU_URL}/supply-planning
+${ANALYTICS_PAGE}=                     ${TABLEAU_URL}/analytics
 
 
-# EMAILS
+# CREDENTIALS
 ${FORECASTING_EMAIL}=                  ${FORECASTING}
-${SUPPLYPLAN_EMAIL}=                   ${SUPPLYPLAN}
+${Supply Planning_EMAIL}=              ${SUPPLYPLAN}
 ${ORDERING_EMAIL}=                     ${ORDERING}
 ${PROCUREMENT_EMAIL}=                  ${PROCUREMENT}
 ${PROCUREMENTSP_EMAIL}=                ${PROCUREMENTSP}

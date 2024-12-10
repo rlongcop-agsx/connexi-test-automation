@@ -23,4 +23,8 @@ I should be redirected in web
 
 Message should display in web
     [Arguments]                         ${text}
-    web_login.Validate Error Message    ${text}
+    web_login.Validate Text Message    ${text}
+
+I click the link
+    [Arguments]                         ${locator}
+    web_home.Verify element if clickable    ${locator}    ${True}

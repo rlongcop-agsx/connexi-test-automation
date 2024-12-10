@@ -1,3 +1,5 @@
 *** Settings ***
 
 *** Keywords ***
+template
+    template

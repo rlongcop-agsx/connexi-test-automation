@@ -25,3 +25,8 @@ Verify header text
     IF    '${status}' == 'FAIL'
         Get page contains      ${expected_header_text}
     END
+
+Verify element if clickable
+    [Arguments]        ${locator}    ${expected_status}
+    ${actual_status}=    Run Keyword And Return Status    SeleniumLibrary.Click Element    ${locator}
+    Should Be Equal    ${actual_status}    ${expected_status}

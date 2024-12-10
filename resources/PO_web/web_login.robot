@@ -19,6 +19,6 @@ Enter credential
     [Arguments]        ${credential}     ${locator}
     SeleniumLibrary.Input Text         ${locator}        ${credential}
 
-Validate Error Message
+Validate Text Message
     [Arguments]                  ${text}
     SeleniumLibrary.Page Should Contain          ${text}
