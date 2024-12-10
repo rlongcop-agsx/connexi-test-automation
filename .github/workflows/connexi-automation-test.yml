@@ -35,17 +35,24 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y openjdk-11-jdk wget unzip
         wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O android-commandlinetools.zip
-        unzip android-commandlinetools.zip -d $HOME/android-sdk
+        unzip android-commandlinetools.zip -d $HOME/android-sdk/cmdline-tools
+        mv $HOME/android-sdk/cmdline-tools/cmdline-tools $HOME/android-sdk/cmdline-tools/latest
         mkdir -p $HOME/.android && echo "###" > $HOME/.android/repositories.cfg
-        yes | $HOME/android-sdk/cmdline-tools/bin/sdkmanager --sdk_root=$HOME/android-sdk \
+        yes | $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$HOME/android-sdk \
           "platform-tools" \
           "platforms;android-30" \
           "system-images;android-30;google_apis;x86_64" \
           "emulator"
 
+    - name: Set up Android Environment Variables
+      run: |
+        echo "ANDROID_HOME=$HOME/android-sdk" >> $GITHUB_ENV
+        echo "$HOME/android-sdk/platform-tools" >> $GITHUB_PATH
+        echo "$HOME/android-sdk/emulator" >> $GITHUB_PATH
+
     - name: Create and Start Android Emulator
       run: |
-        $HOME/android-sdk/cmdline-tools/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
+        $HOME/android-sdk/cmdline-tools/latest/bin/avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
         $HOME/android-sdk/emulator/emulator -avd test -no-window -no-audio -no-snapshot -gpu off &
 
     - name: Wait for Emulator to Boot
@@ -85,21 +92,6 @@ jobs:
       with:
         name: test-report
         path: reports/
-
-  publish_test_report:
-    runs-on: ubuntu-latest
-    needs: [ run_automation_test ]
-    if: always()
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Download test results artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: test-report
-        path: ./reports
 
     - name: Publish test results as a GitHub Pages site
       uses: peaceiris/actions-gh-pages@v3
