@@ -1,9 +1,5 @@
-# Use the Docker-Android image as the base
+# Use the appropriate Docker-Android image based on your required Android version
 FROM budtmo/docker-android:emulator_11.0
-
-# Install Maven
-RUN apt-get update && \
-    apt-get install -y maven
 
 # Copy the APK file (adjust the path if needed)
 COPY app/TEST-ef1d159d-63bf-4e8a-93ce-d5d75b4d6ace.apk /app/TEST-ef1d159d-63bf-4e8a-93ce-d5d75b4d6ace.apk
