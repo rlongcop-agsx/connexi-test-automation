@@ -39,8 +39,8 @@ jobs:
         -v QUALITYMANAGEMENT_EMAIL:${{ secrets.QUALITYMANAGEMENT_EMAIL }} \
         -v SUPPLYPLAN_EMAIL:${{ secrets.SUPPLYPLAN_EMAIL }} \
         -v VENDOR_EMAIL:${{ secrets.VENDOR_EMAIL }} \
-        -i mobile \
-        test-scenarios
+        -i web \
+        tests
 
     - name: Archive test report
       if: always()
