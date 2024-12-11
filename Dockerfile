@@ -1,13 +1,6 @@
-# Use the appropriate Docker-Android image based on your required Android version
 FROM budtmo/docker-android:emulator_11.0
-
-# Copy the APK file (adjust the path if needed)
 COPY app/TEST-ef1d159d-63bf-4e8a-93ce-d5d75b4d6ace.apk /app/TEST-ef1d159d-63bf-4e8a-93ce-d5d75b4d6ace.apk
-
-# Expose only the Appium port (since you won't need the VNC or emulator ports)
-EXPOSE 4723
-
-# Set environment variables
+EXPOSE 4723 5554 5555 6080
 ENV DEVICE="Samsung Galaxy S6" \
     APPIUM=true \
     CONNECT_TO_GRID=true \

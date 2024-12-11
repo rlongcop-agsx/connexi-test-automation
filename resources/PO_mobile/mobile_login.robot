@@ -17,4 +17,4 @@ Enter credential
     
 Validate Error Message
     [Arguments]                                  ${text}
-    AppiumLibrary.Page Should Contain Text       ${text}
+    AppiumLibrary.Wait Until Page Contains       ${text}

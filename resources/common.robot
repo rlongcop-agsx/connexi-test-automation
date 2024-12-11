@@ -9,6 +9,12 @@ Library        Screenshot
            
 
 *** Keywords ***
+Custom Capture Page Screenshot
+    [Arguments]    @{tags}
+    ${tags_string}=    Evaluate    " ".join(${tags})
+    Run Keyword If    "WEB" in ${tags_string}    SeleniumLibrary.Capture Page Screenshot
+    Run Keyword If    "MOBILE" in ${tags_string}    AppiumLibrary.Capture Page Screenshot
+
 Main Mobile Setup
     [Documentation]                        This is the main setup for the kadena mobile app
     Empty Directory                        reports/screenshots
@@ -25,7 +31,7 @@ Main Mobile Setup
 
 Main Mobile Teardown
     [Documentation]        This is the main teardown for the mobile app
-    AppiumLibrary.Capture Page Screenshot
+    Run Keyword If Test Failed    Custom Capture Page Screenshot    @{TEST TAGS}
     AppiumLibrary.Close All Applications
 
 Main Web Setup
@@ -38,5 +44,5 @@ Main Web Setup
 
 Main Web Teardown
     [Documentation]        This is the main teardown for the web app
-    SeleniumLibrary.Capture Page Screenshot
+    Run Keyword If Test Failed    Custom Capture Page Screenshot    @{TEST TAGS}
     Close All Browsers
